@@ -11,6 +11,7 @@ namespace Chateau_Latour.Controllers.YinXinXin
         // GET: Login
         public ActionResult Index()
         {
+            int a = 4;
             return View();
         }
     }
