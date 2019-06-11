@@ -126,19 +126,82 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\GaoMeng\DefaultController.cs" />
-    <Compile Include="Controllers\WangJiaWen\DefaultController.cs" />
-    <Compile Include="Controllers\WangJie\DefaultController.cs" />
-    <Compile Include="Controllers\YinXinXin\LoginController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\animate.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\flexslider.css" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery.countdown.css" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Index\1.jpg" />
+    <Content Include="Images\Index\1.png" />
+    <Content Include="Images\Index\10.jpg" />
+    <Content Include="Images\Index\11.jpg" />
+    <Content Include="Images\Index\12.jpg" />
+    <Content Include="Images\Index\13.jpg" />
+    <Content Include="Images\Index\14.jpg" />
+    <Content Include="Images\Index\15.jpg" />
+    <Content Include="Images\Index\16.jpg" />
+    <Content Include="Images\Index\17.jpg" />
+    <Content Include="Images\Index\18.jpg" />
+    <Content Include="Images\Index\19.jpg" />
+    <Content Include="Images\Index\2.jpg" />
+    <Content Include="Images\Index\2.png" />
+    <Content Include="Images\Index\20.jpg" />
+    <Content Include="Images\Index\21.jpg" />
+    <Content Include="Images\Index\22.jpg" />
+    <Content Include="Images\Index\23.jpg" />
+    <Content Include="Images\Index\24.jpg" />
+    <Content Include="Images\Index\25.jpg" />
+    <Content Include="Images\Index\26.jpg" />
+    <Content Include="Images\Index\27.jpg" />
+    <Content Include="Images\Index\28.jpg" />
+    <Content Include="Images\Index\29.jpg" />
+    <Content Include="Images\Index\3.jpg" />
+    <Content Include="Images\Index\3.png" />
+    <Content Include="Images\Index\30.jpg" />
+    <Content Include="Images\Index\31.jpg" />
+    <Content Include="Images\Index\32.jpg" />
+    <Content Include="Images\Index\33.jpg" />
+    <Content Include="Images\Index\34.jpg" />
+    <Content Include="Images\Index\4.jpg" />
+    <Content Include="Images\Index\4.png" />
+    <Content Include="Images\Index\5.jpg" />
+    <Content Include="Images\Index\5.png" />
+    <Content Include="Images\Index\6.jpg" />
+    <Content Include="Images\Index\7.jpg" />
+    <Content Include="Images\Index\8.jpg" />
+    <Content Include="Images\Index\9.jpg" />
+    <Content Include="Images\Index\bag-.png" />
+    <Content Include="Images\Index\bag.png" />
+    <Content Include="Images\Index\banner.jpg" />
+    <Content Include="Images\Index\check.png" />
+    <Content Include="Images\Index\close_1.png" />
+    <Content Include="Images\Index\img-sp.png" />
+    <Content Include="Images\Index\si.jpg" />
+    <Content Include="Images\Index\si1.jpg" />
+    <Content Include="Images\Index\si2.jpg" />
+    <Content Include="Scripts\bootstrap-3.1.1.min.js" />
+    <Content Include="Scripts\classie.js" />
+    <Content Include="Scripts\imagezoom.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.countdown.js" />
+    <Content Include="Scripts\jquery.flexslider.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.wmuSlider.js" />
+    <Content Include="Scripts\script.js" />
+    <Content Include="Scripts\simpleCart.min.js" />
+    <Content Include="Scripts\uisearch.js" />
+    <Content Include="Scripts\wow.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -153,9 +216,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +225,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
