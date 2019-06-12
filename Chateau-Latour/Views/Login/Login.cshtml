@@ -2,11 +2,11 @@
 @{
     Layout = null;
 }
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>首页</title>
+    <title>Login</title>
+    <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Best Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -14,30 +14,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <script type="application/x-javascript">
         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
                function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <link rel="icon" type="image/x-icon" href="~/Images/Index/logo.jpg" />
+    <!-- //for-mobile-apps -->
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/style.css" rel="stylesheet" />
     <!-- js -->
     <script src="~/Scripts/jquery.min.js"></script>
     <!-- //js -->
+    <!-- cart -->
     <script src="~/Scripts/simpleCart.min.js"></script>
     <!-- cart -->
-    <!--引用bootstrap-->
-    <script type="text/javascript" src="~/Scripts/bootstrap-3.1.1.min.js"></script>
-    <!-- //引用外部样式表 -->
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <!-- for bootstrap working -->
+    <script src="~/Scripts/bootstrap-3.1.1.min.js"></script>
+    <!-- //for bootstrap working -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    <!-- timer -->
-    <link rel="stylesheet" href="~/Content/jquery.countdown.css" />
-    <!-- //timer -->
     <!-- animation-effect -->
-    <link href="~/Content/animate.min.css" rel="stylesheet">
+    <link href="~/Content/animate.min.css" rel="stylesheet" />
     <script src="~/Scripts/wow.min.js"></script>
-    <script>
-        new WOW().init();
-    </script>
+    <script>new WOW().init();</script>
+    <!-- //animation-effect -->
 </head>
-
 <body>
     <!-- 头部 -->
     <div class="header">
@@ -55,7 +52,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="logo-nav">
                 <div class="logo-nav-left animated wow zoomIn" data-wow-delay=".5s">
-                    <h1><a href="/Home/Index"> Latour <span>Enjoy quality</span></a></h1>
+                    <h1><a href="index.html"> Latour <span>Enjoy quality</span></a></h1>
                 </div>
                 <div class="logo-nav-left1">
                     <nav class="navbar navbar-default">
@@ -70,7 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="/Home/Index" class="act">首页</a></li>
+                                <li class="active"><a href="index.html" class="act">首页</a></li>
                                 <!-- 二级菜单 -->
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">酿造酒 <b class="caret"></b></a>
@@ -215,13 +212,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </form>
                         </div>
                     </div>
-                    <!-- 搜索-scripts -->
+                    <!-- search-scripts -->
                     <script src="~/Scripts/classie.js"></script>
                     <script src="~/Scripts/uisearch.js"></script>
-                    <script>
-                        new UISearch(document.getElementById('sb-search'));
-                    </script>
-                    <!-- //搜索-scripts -->
+                    <script>new UISearch(document.getElementById('sb-search'));</script>
+                    <!-- //search-scripts -->
                 </div>
                 <div class="header-right">
                     <div class="cart box_1">
@@ -230,233 +225,100 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="total">
                                     <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)
                                 </div>
-                                <img src="~/Images/Index/bag.png" alt="" />
+                                <img src="images/bag.png" alt="" />
                             </h3>
                         </a>
                         <p><a href="javascript:;" class="simpleCart_empty">购物车</a></p>
                         <div class="clearfix"> </div>
                     </div>
                 </div>
-                <div class="clearfix"></div>
+                <div class="clearfix"> </div>
             </div>
         </div>
     </div>
     <!-- //头部 -->
-    <!-- 横幅 -->
-    <div class="banner">
+    <!-- breadcrumbs -->
+    <div class="breadcrumbs">
         <div class="container">
-            <div class="banner-info animated wow zoomIn" data-wow-delay=".5s">
-                <h3>Free Online Shopping</h3>
-                <h4>Up to <span>50% <i>Off/-</i></span></h4>
-                <div class="wmuSlider example1">
-                    <div class="wmuSliderWrapper">
-                        <article style="position: absolute; width: 100%; opacity: 0;">
-                            <div class="banner-wrap">
-                                <div class="banner-info1">
-                                    <p>T-Shirts + Formal Pants + Jewellery + Cosmetics</p>
-                                </div>
-                            </div>
-                        </article>
-                        <article style="position: absolute; width: 100%; opacity: 0;">
-                            <div class="banner-wrap">
-                                <div class="banner-info1">
-                                    <p>Toys + Furniture + Lighting + Watches</p>
-                                </div>
-                            </div>
-                        </article>
-                        <article style="position: absolute; width: 100%; opacity: 0;">
-                            <div class="banner-wrap">
-                                <div class="banner-info1">
-                                    <p>Tops + Books & Media + Sports</p>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <script src="~/Scripts/jquery.wmuSlider.js"></script>
-                <script>
-                    $('.example1').wmuSlider();
-                </script>
+            <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+                <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+                <li class="active">Latour Login</li>
+            </ol>
+        </div>
+    </div>
+    <!-- //breadcrumbs -->
+    <!-- login -->
+    <div class="login">
+        <div class="container">
+            <h3 class="animated wow zoomIn" data-wow-delay=".5s">Latour Login</h3>
+            <div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
+                <form>
+                    <input type="text" placeholder="phone" required=" ">
+                    <input type="password" placeholder="Password" required=" ">
+                    <input type="submit" value="登录">
+                </form>
             </div>
         </div>
     </div>
-    <!-- //横幅 -->
-    <!-- 横幅底部 -->
-    <div class="banner-bottom">
-        <div class="container">
-            <div class="banner-bottom-grids">
-                <div class="banner-bottom-grid-left animated wow slideInLeft" data-wow-delay=".5s">
-                    <div class="grid">
-                        <figure class="effect-julia">
-                            <img src="~/Images/Index/index2.jpg" alt=" " class="img-responsive" />
-                            <figcaption>
-                                <h3>最好的 <span>酒庄</span><i> 在最好的时候遇上</i></h3>
-                                <div>
-                                    <p>Cupidatat non proident, sunt</p>
-                                    <p>Officia deserunt mollit anim</p>
-                                    <p>Laboris nisi ut aliquip consequat</p>
-                                </div>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <div class="banner-bottom-grid-left1 animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="banner-bottom-grid-left-grid left1-grid grid-left-grid1">
-                        <div class="banner-bottom-grid-left-grid1">
-                            <img src="~/Images/Index/index3.jpg" alt=" " class="img-responsive" />
-                        </div>
-                        <div class="banner-bottom-grid-left1-pos">
-                            <p>Discount 45%</p>
-                        </div>
-                    </div>
-                    <div class="banner-bottom-grid-left-grid left1-grid grid-left-grid1">
-                        <div class="banner-bottom-grid-left-grid1">
-                            <img src="~/Images/Index/index5.jpg" alt=" " class="img-responsive" />
-                        </div>
-                        <div class="banner-bottom-grid-left1-position">
-                            <div class="banner-bottom-grid-left1-pos1">
-                                <p>Latest New Collections</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="banner-bottom-grid-right animated wow slideInRight" data-wow-delay=".5s">
-                    <div class="banner-bottom-grid-left-grid grid-left-grid1">
-                        <div class="banner-bottom-grid-left-grid1">
-                            <img src="~/Images/Index/index4.jpg" alt=" " class="img-responsive" />
-                        </div>
-                        <div class="grid-left-grid1-pos">
-                            <p>top and classic designs <span>2018 Collection</span></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>
-    <!-- //横幅底部 -->
-    <!-- 收藏 -->
-    <div class="new-collections">
-        <div class="container">
-            <h3 class="animated wow zoomIn" data-wow-delay=".5s">New wine</h3>
-            <p class="est animated wow zoomIn" data-wow-delay=".5s">
-                Wine is very popular all over the world.
-            </p>
-            <div class="new-collections-grids" id="conter-first">
-                
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-    <!-- //收藏 -->
-    <!-- new-timer -->
-    <div class="timer">
-        <div class="container">
-            <div class="timer-grids">
-                <div class="col-md-8 timer-grid-left animated wow slideInLeft" data-wow-delay=".5s">
-                    <h3><a href="products.html">苏格兰威士忌</a></h3>
-                    <div class="rating">
-                        <div class="rating-left">
-                            <img src="~/Images/Index/2.png" alt=" " class="img-responsive" />
-                        </div>
-                        <div class="rating-left">
-                            <img src="~/Images/Index/2.png" alt=" " class="img-responsive" />
-                        </div>
-                        <div class="rating-left">
-                            <img src="~/Images/Index/2.png" alt=" " class="img-responsive" />
-                        </div>
-                        <div class="rating-left">
-                            <img src="~/Images/Index/2.png" alt=" " class="img-responsive" />
-                        </div>
-                        <div class="rating-left">
-                            <img src="~/Images/Index/1.png" alt=" " class="img-responsive" />
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="new-collections-grid1-left simpleCart_shelfItem timer-grid-left-price">
-                        <p><i>$580</i> <span class="item_price">$550</span></p>
-                        <h4>
-                            根据苏格兰威士忌协会(Scotch Whisky Association)的说法，苏格兰威士忌是从一种名为“Uisge Beatha”(意为“生命之水”)的饮料发展而来的。
-                            苏格兰的威士忌在15世纪时，更多的是作为驱寒的药水。 
-                            1823年，英国国会通过颁布《消费法》(Excise Act)为合法蒸馏厂营造比较宽松的税收环境，同时又大力“围剿”非法蒸馏厂，从而极大地促进了苏格兰威士忌产业的发展。
-                            1831年，苏格兰引进的塔式蒸馏锅(column still)，这种蒸馏锅可以进行连续蒸馏，极大地提高了蒸馏效率，从而降低了威士忌的价格，使威士忌更加平民化。
-                        </h4>
-                        <p><a class="item_add timer_add" href="#">加入购物车 </a></p>
-                    </div>
-                    <div id="counter"> </div>
-                    <script src="~/Scripts/jquery.countdown.js"></script>
-                    <script src="~/Scripts/script.js"></script>
-                </div>
-                <div class="col-md-4 timer-grid-right animated wow slideInRight" data-wow-delay=".5s">
-                    <div class="timer-grid-right1">
-                        <img src="~/Images/Commodity/sp1_1.jpg" alt=" " class="img-responsive" />
-                        <div class="timer-grid-right-pos">
-                            <h4>Special Offer</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>
-    <!-- //new-timer -->
-    <!-- 底部 -->
+    <!-- //login -->
+    <!-- footer -->
     <div class="footer">
         <div class="container">
             <div class="footer-grids">
                 <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
-                    <h3>关于我们</h3>
+                    <h3>About Us</h3>
                     <p>
-                        联系我们
-                        <span>平台理念</span>
-                        <span>平台资质</span>
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse.<span>
+                            Excepteur sint occaecat cupidatat
+                            non proident, sunt in culpa qui officia deserunt mollit.
+                        </span>
                     </p>
                 </div>
                 <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".6s">
-                    <h3>售后服务</h3>
+                    <h3>Contact Info</h3>
                     <ul>
-                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>退换货说明</li>
-                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>购物须知</li>
-                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>关于专票</li>
+                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
+                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
+                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
                     </ul>
                 </div>
                 <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".7s">
                     <h3>Flickr Posts</h3>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/13.jpg" alt=" " class="img-responsive" /></a>
+                        <a href="single.html"><img src="images/13.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/14.jpg" alt=" " class="img-responsive" /></a>
+                        <a href="single.html"><img src="images/14.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/15.jpg" alt=" " class="img-responsive" /></a>
+                        <a href="single.html"><img src="images/15.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/16.jpg" alt=" " class="img-responsive" /></a>
+                        <a href="single.html"><img src="images/16.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/13.jpg" alt=" " class="img-responsive" /></a>
+                        <a href="single.html"><img src="images/13.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/14.jpg" alt=" " class="img-responsive" /></a>
+                        <a href="single.html"><img src="images/14.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/15.jpg" alt=" " class="img-responsive" /></a>
+                        <a href="single.html"><img src="images/15.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/16.jpg" alt=" " class="img-responsive" /></a>
+                        <a href="single.html"><img src="images/16.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/13.jpg" alt=" " class="img-responsive" /></a>
+                        <a href="single.html"><img src="images/13.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/14.jpg" alt=" " class="img-responsive" /></a>
+                        <a href="single.html"><img src="images/14.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/15.jpg" alt=" " class="img-responsive" /></a>
+                        <a href="single.html"><img src="images/15.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/16.jpg" alt=" " class="img-responsive" /></a>
+                        <a href="single.html"><img src="images/16.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
@@ -464,7 +326,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h3>Blog Posts</h3>
                     <div class="footer-grid-sub-grids">
                         <div class="footer-grid-sub-grid-left">
-                            <a href="single.html"><img src="~/Images/Index/9.jpg" alt=" " class="img-responsive" /></a>
+                            <a href="single.html"><img src="images/9.jpg" alt=" " class="img-responsive" /></a>
                         </div>
                         <div class="footer-grid-sub-grid-right">
                             <h4><a href="single.html">culpa qui officia deserunt</a></h4>
@@ -474,7 +336,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                     <div class="footer-grid-sub-grids">
                         <div class="footer-grid-sub-grid-left">
-                            <a href="single.html"><img src="~/Images/Index/10.jpg" alt=" " class="img-responsive" /></a>
+                            <a href="single.html"><img src="images/10.jpg" alt=" " class="img-responsive" /></a>
                         </div>
                         <div class="footer-grid-sub-grid-right">
                             <h4><a href="single.html">Quis autem vel eum iure</a></h4>
@@ -486,17 +348,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"> </div>
             </div>
             <div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
-                <h2><a href="/Home/Index">Latour <span>Enjoy quality</span></a></h2>
+                <h2><a href="index.html">Best Store <span>shop anywhere</span></a></h2>
             </div>
             <div class="copy-right animated wow slideInUp" data-wow-delay=".5s">
-                <p>版权所有 &copy; 2019.Latour 保留所有权利</p>
+                <p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
             </div>
         </div>
     </div>
-    <!-- //底部 -->
-    <!--引入编写的js-->
-    <script src="~/Scripts/jquery.min.js"></script>
-    <script src="~/Scripts/YinXinXin/Index.js"></script>
-    <!--//引入编写的js-->
+    <!-- //footer -->
 </body>
 </html>

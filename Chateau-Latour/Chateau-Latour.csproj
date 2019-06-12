@@ -135,6 +135,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SingleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -278,6 +280,18 @@
     <Content Include="Images\Index\si1.jpg" />
     <Content Include="Images\Index\si2.jpg" />
     <Content Include="Images\Index\深蓝伏特加.jpg" />
+    <Content Include="Images\Single\00.jpg" />
+    <Content Include="Images\Single\01.jpg" />
+    <Content Include="Images\Single\02.jpg" />
+    <Content Include="Images\Single\1.jpg" />
+    <Content Include="Images\Single\1.png" />
+    <Content Include="Images\Single\2.jpg" />
+    <Content Include="Images\Single\2.png" />
+    <Content Include="Images\Single\3.jpg" />
+    <Content Include="Images\Single\4.gif" />
+    <Content Include="Images\Single\5.jpg" />
+    <Content Include="Images\Single\con-cp1.png" />
+    <Content Include="Images\Single\conlist-cp1.jpg" />
     <Content Include="Models\LaTuEr.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>LaTuEr.edmx</DependentUpon>
@@ -333,6 +347,8 @@
     </Content>
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Single\Single.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
