@@ -24,5 +24,6 @@ namespace Chateau_Latour.Models
         public Nullable<int> SupplierId { get; set; }
         public Nullable<int> Inventoryquantity { get; set; }
         public Nullable<int> Commoditycategory { get; set; }
+        public string Image { get; set; }
     }
 }

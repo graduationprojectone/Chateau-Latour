@@ -19,7 +19,7 @@ namespace Chateau_Latour.Models
         public string Tradename { get; set; }
         public Nullable<System.DateTime> Ordertime { get; set; }
         public Nullable<int> PaymentmethodId { get; set; }
-        public Nullable<double> Itempricing { get; set; }
+        public Nullable<decimal> Itempricing { get; set; }
         public string Commoditypictures { get; set; }
         public Nullable<int> UserId { get; set; }
         public Nullable<int> UseraddressId { get; set; }

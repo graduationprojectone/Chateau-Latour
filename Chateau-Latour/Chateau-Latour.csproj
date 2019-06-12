@@ -214,6 +214,15 @@
     <Content Include="Images\Commodity\sp2_1.jpg" />
     <Content Include="Images\Commodity\sp2_2.jpg" />
     <Content Include="Images\Commodity\sp2_3.jpg" />
+    <Content Include="Images\Commodity\sp3_1.jpg" />
+    <Content Include="Images\Commodity\sp3_2.jpg" />
+    <Content Include="Images\Commodity\sp3_3.jpg" />
+    <Content Include="Images\Commodity\sp4_1.jpg" />
+    <Content Include="Images\Commodity\sp4_2.jpg" />
+    <Content Include="Images\Commodity\sp4_3.jpg" />
+    <Content Include="Images\Commodity\sp5_1.jpg" />
+    <Content Include="Images\Commodity\sp5_2.jpg" />
+    <Content Include="Images\Commodity\sp5_3.jpg" />
     <Content Include="Images\Index\1.jpg" />
     <Content Include="Images\Index\1.png" />
     <Content Include="Images\Index\10.jpg" />
@@ -271,8 +280,8 @@
     <Content Include="Images\Index\深蓝伏特加.jpg" />
     <Content Include="Models\LaTuEr.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>LaTuEr.Context.cs</LastGenOutput>
       <DependentUpon>LaTuEr.edmx</DependentUpon>
+      <LastGenOutput>LaTuEr.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\LaTuEr.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

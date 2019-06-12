@@ -13,10 +13,10 @@ namespace Chateau_Latour.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class LaTuErEntities : DbContext
+    public partial class LaTuErEntities1 : DbContext
     {
-        public LaTuErEntities()
-            : base("name=LaTuErEntities")
+        public LaTuErEntities1()
+            : base("name=LaTuErEntities1")
         {
         }
     

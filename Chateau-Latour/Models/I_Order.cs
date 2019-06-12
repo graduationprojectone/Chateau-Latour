@@ -16,7 +16,7 @@ namespace Chateau_Latour.Models
     {
         public int OrderId { get; set; }
         public Nullable<int> Purchasequantity { get; set; }
-        public Nullable<double> Orderamount { get; set; }
+        public Nullable<decimal> Orderamount { get; set; }
         public Nullable<System.DateTime> Ordertime { get; set; }
         public string Couriernumber { get; set; }
     }

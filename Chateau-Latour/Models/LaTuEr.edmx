@@ -58,6 +58,7 @@
           <Property Name="SupplierId" Type="int" />
           <Property Name="Inventoryquantity" Type="int" />
           <Property Name="Commoditycategory" Type="int" />
+          <Property Name="Image" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="F-Commoditypictures">
           <Key>
@@ -93,7 +94,7 @@
           </Key>
           <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Purchasequantity" Type="int" />
-          <Property Name="Orderamount" Type="float" />
+          <Property Name="Orderamount" Type="money" />
           <Property Name="Ordertime" Type="datetime" />
           <Property Name="Couriernumber" Type="nvarchar" MaxLength="50" />
         </EntityType>
@@ -106,7 +107,7 @@
           <Property Name="Tradename" Type="nvarchar" MaxLength="50" />
           <Property Name="Ordertime" Type="datetime" />
           <Property Name="PaymentmethodId" Type="int" />
-          <Property Name="Itempricing" Type="float" />
+          <Property Name="Itempricing" Type="money" />
           <Property Name="Commoditypictures" Type="nvarchar(max)" />
           <Property Name="UserId" Type="int" />
           <Property Name="UseraddressId" Type="int" />
@@ -229,6 +230,7 @@
           <Property Name="SupplierId" Type="Int32" />
           <Property Name="Inventoryquantity" Type="Int32" />
           <Property Name="Commoditycategory" Type="Int32" />
+          <Property Name="Image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="F_Commoditypictures">
           <Key>
@@ -253,7 +255,7 @@
           </Key>
           <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Purchasequantity" Type="Int32" />
-          <Property Name="Orderamount" Type="Double" />
+          <Property Name="Orderamount" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Ordertime" Type="DateTime" Precision="3" />
           <Property Name="Couriernumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -266,7 +268,7 @@
           <Property Name="Tradename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Ordertime" Type="DateTime" Precision="3" />
           <Property Name="PaymentmethodId" Type="Int32" />
-          <Property Name="Itempricing" Type="Double" />
+          <Property Name="Itempricing" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Commoditypictures" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UserId" Type="Int32" />
           <Property Name="UseraddressId" Type="Int32" />
@@ -315,7 +317,7 @@
           <Property Name="Commodity" Type="Int32" />
           <Property Name="Inventoryquantity" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="LaTuErEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="LaTuErEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="A_UserLogin" EntityType="Self.A_UserLogin" />
           <EntitySet Name="B_User_roles" EntityType="Self.B_User_roles" />
           <EntitySet Name="C_Area" EntityType="Self.C_Area" />
@@ -336,7 +338,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LaTuErModelStoreContainer" CdmEntityContainer="LaTuErEntities">
+        <EntityContainerMapping StorageEntityContainer="LaTuErModelStoreContainer" CdmEntityContainer="LaTuErEntities1">
           <EntitySetMapping Name="A_UserLogin">
             <EntityTypeMapping TypeName="LaTuErModel.A_UserLogin">
               <MappingFragment StoreEntitySet="A-UserLogin">
@@ -393,6 +395,7 @@
                 <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
                 <ScalarProperty Name="Inventoryquantity" ColumnName="Inventoryquantity" />
                 <ScalarProperty Name="Commoditycategory" ColumnName="Commoditycategory" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
