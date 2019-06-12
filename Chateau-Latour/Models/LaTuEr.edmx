@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LaTuErModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="A-UserLogin">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserPwd" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserPhone" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="role" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="B-User-roles">
+          <Key>
+            <PropertyRef Name="RolesId" />
+          </Key>
+          <Property Name="RolesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Roles" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="C-Area">
+          <Key>
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="AreaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AreaCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="AreaName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pid" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="D-address">
+          <Key>
+            <PropertyRef Name="UseraddressId" />
+          </Key>
+          <Property Name="UseraddressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="ConsigneeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="AreaId" Type="int" />
+          <Property Name="Zipcode" Type="int" />
+          <Property Name="Detailedaddress" Type="nvarchar" MaxLength="250" />
+          <Property Name="Defaultstate" Type="int" />
+        </EntityType>
+        <EntityType Name="E-Commodity">
+          <Key>
+            <PropertyRef Name="CommodityId" />
+          </Key>
+          <Property Name="CommodityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tradename" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubtitleofCommodity" Type="nvarchar" MaxLength="250" />
+          <Property Name="Commodityclassification" Type="int" />
+          <Property Name="CommodityDescription" Type="nvarchar" MaxLength="250" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Contactnumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="SupplierId" Type="int" />
+          <Property Name="Inventoryquantity" Type="int" />
+          <Property Name="Commoditycategory" Type="int" />
+          <Property Name="Image" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="F-Commoditypictures">
+          <Key>
+            <PropertyRef Name="CommoditypicturesId" />
+          </Key>
+          <Property Name="CommoditypicturesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Picturedescription" Type="nvarchar" MaxLength="250" />
+          <Property Name="Mastergraph" Type="nvarchar(max)" />
+          <Property Name="Pictureset" Type="nvarchar(max)" />
+          <Property Name="CommodityId" Type="int" />
+        </EntityType>
+        <EntityType Name="G-Classification">
+          <Key>
+            <PropertyRef Name="ClassificationId" />
+          </Key>
+          <Property Name="ClassificationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Classificationname" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6013: 表/视图“LaTuEr.dbo.H-Comment”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="H-Comment">
+          <Property Name="CommentId" Type="int" />
+          <Property Name="CommodityId" Type="int" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="Tradename" Type="nvarchar" MaxLength="50" />
+          <Property Name="Commentcontent" Type="nvarchar" MaxLength="250" />
+          <Property Name="score" Type="int" />
+          <Property Name="Commentarytime" Type="datetime" />
+        </EntityType>-->
+        <EntityType Name="I-Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Purchasequantity" Type="int" />
+          <Property Name="Orderamount" Type="money" />
+          <Property Name="Ordertime" Type="datetime" />
+          <Property Name="Couriernumber" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="J-OrderXX">
+          <Key>
+            <PropertyRef Name="OrderxxId" />
+          </Key>
+          <Property Name="OrderxxId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CommodityId" Type="int" />
+          <Property Name="Tradename" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ordertime" Type="datetime" />
+          <Property Name="PaymentmethodId" Type="int" />
+          <Property Name="Itempricing" Type="money" />
+          <Property Name="Commoditypictures" Type="nvarchar(max)" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="UseraddressId" Type="int" />
+          <Property Name="Quantityofcommodities" Type="int" />
+          <Property Name="Orderstatus" Type="int" />
+        </EntityType>
+        <EntityType Name="K-ShoppingCart">
+          <Key>
+            <PropertyRef Name="ShoppingCartId" />
+          </Key>
+          <Property Name="ShoppingCartId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="CommodityId" Type="int" />
+          <Property Name="Quantityofcommodities" Type="int" />
+        </EntityType>
+        <EntityType Name="L-Supplier">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="SupplierId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nameofsupplier" Type="nvarchar" MaxLength="50" />
+          <Property Name="Suppliertype" Type="int" />
+          <Property Name="SupplierTelephone" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="M-Suppliertype">
+          <Key>
+            <PropertyRef Name="PlatformId" />
+          </Key>
+          <Property Name="PlatformId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="platform" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="N-Logisticscompany">
+          <Key>
+            <PropertyRef Name="LogisticscompanyId" />
+          </Key>
+          <Property Name="LogisticscompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameofLogisticsCompany" Type="nvarchar" MaxLength="50" />
+          <Property Name="Logisticscompanycontacts" Type="nvarchar" MaxLength="50" />
+          <Property Name="Logisticstelephone" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="O-Commodityinventory">
+          <Key>
+            <PropertyRef Name="StockId" />
+          </Key>
+          <Property Name="StockId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Commodity" Type="int" />
+          <Property Name="Inventoryquantity" Type="int" />
+        </EntityType>
+        <EntityContainer Name="LaTuErModelStoreContainer">
+          <EntitySet Name="A-UserLogin" EntityType="Self.A-UserLogin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="B-User-roles" EntityType="Self.B-User-roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="C-Area" EntityType="Self.C-Area" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="D-address" EntityType="Self.D-address" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="E-Commodity" EntityType="Self.E-Commodity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="F-Commoditypictures" EntityType="Self.F-Commoditypictures" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="G-Classification" EntityType="Self.G-Classification" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="I-Order" EntityType="Self.I-Order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="J-OrderXX" EntityType="Self.J-OrderXX" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="K-ShoppingCart" EntityType="Self.K-ShoppingCart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="L-Supplier" EntityType="Self.L-Supplier" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M-Suppliertype" EntityType="Self.M-Suppliertype" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="N-Logisticscompany" EntityType="Self.N-Logisticscompany" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="O-Commodityinventory" EntityType="Self.O-Commodityinventory" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LaTuErModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="A_UserLogin">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UserPhone" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="role" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="B_User_roles">
+          <Key>
+            <PropertyRef Name="RolesId" />
+          </Key>
+          <Property Name="RolesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Roles" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="C_Area">
+          <Key>
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="AreaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AreaCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="D_address">
+          <Key>
+            <PropertyRef Name="UseraddressId" />
+          </Key>
+          <Property Name="UseraddressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="ConsigneeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AreaId" Type="Int32" />
+          <Property Name="Zipcode" Type="Int32" />
+          <Property Name="Detailedaddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Defaultstate" Type="Int32" />
+        </EntityType>
+        <EntityType Name="E_Commodity">
+          <Key>
+            <PropertyRef Name="CommodityId" />
+          </Key>
+          <Property Name="CommodityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tradename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubtitleofCommodity" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Commodityclassification" Type="Int32" />
+          <Property Name="CommodityDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Contactnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierId" Type="Int32" />
+          <Property Name="Inventoryquantity" Type="Int32" />
+          <Property Name="Commoditycategory" Type="Int32" />
+          <Property Name="Image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="F_Commoditypictures">
+          <Key>
+            <PropertyRef Name="CommoditypicturesId" />
+          </Key>
+          <Property Name="CommoditypicturesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Picturedescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Mastergraph" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Pictureset" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CommodityId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="G_Classification">
+          <Key>
+            <PropertyRef Name="ClassificationId" />
+          </Key>
+          <Property Name="ClassificationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Classificationname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="I_Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Purchasequantity" Type="Int32" />
+          <Property Name="Orderamount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Ordertime" Type="DateTime" Precision="3" />
+          <Property Name="Couriernumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="J_OrderXX">
+          <Key>
+            <PropertyRef Name="OrderxxId" />
+          </Key>
+          <Property Name="OrderxxId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CommodityId" Type="Int32" />
+          <Property Name="Tradename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ordertime" Type="DateTime" Precision="3" />
+          <Property Name="PaymentmethodId" Type="Int32" />
+          <Property Name="Itempricing" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Commoditypictures" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="UseraddressId" Type="Int32" />
+          <Property Name="Quantityofcommodities" Type="Int32" />
+          <Property Name="Orderstatus" Type="Int32" />
+        </EntityType>
+        <EntityType Name="K_ShoppingCart">
+          <Key>
+            <PropertyRef Name="ShoppingCartId" />
+          </Key>
+          <Property Name="ShoppingCartId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="CommodityId" Type="Int32" />
+          <Property Name="Quantityofcommodities" Type="Int32" />
+        </EntityType>
+        <EntityType Name="L_Supplier">
+          <Key>
+            <PropertyRef Name="SupplierId" />
+          </Key>
+          <Property Name="SupplierId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nameofsupplier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Suppliertype" Type="Int32" />
+          <Property Name="SupplierTelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="M_Suppliertype">
+          <Key>
+            <PropertyRef Name="PlatformId" />
+          </Key>
+          <Property Name="PlatformId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="N_Logisticscompany">
+          <Key>
+            <PropertyRef Name="LogisticscompanyId" />
+          </Key>
+          <Property Name="LogisticscompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameofLogisticsCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Logisticscompanycontacts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Logisticstelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="O_Commodityinventory">
+          <Key>
+            <PropertyRef Name="StockId" />
+          </Key>
+          <Property Name="StockId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Commodity" Type="Int32" />
+          <Property Name="Inventoryquantity" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="LaTuErEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="A_UserLogin" EntityType="Self.A_UserLogin" />
+          <EntitySet Name="B_User_roles" EntityType="Self.B_User_roles" />
+          <EntitySet Name="C_Area" EntityType="Self.C_Area" />
+          <EntitySet Name="D_address" EntityType="Self.D_address" />
+          <EntitySet Name="E_Commodity" EntityType="Self.E_Commodity" />
+          <EntitySet Name="F_Commoditypictures" EntityType="Self.F_Commoditypictures" />
+          <EntitySet Name="G_Classification" EntityType="Self.G_Classification" />
+          <EntitySet Name="I_Order" EntityType="Self.I_Order" />
+          <EntitySet Name="J_OrderXX" EntityType="Self.J_OrderXX" />
+          <EntitySet Name="K_ShoppingCart" EntityType="Self.K_ShoppingCart" />
+          <EntitySet Name="L_Supplier" EntityType="Self.L_Supplier" />
+          <EntitySet Name="M_Suppliertype" EntityType="Self.M_Suppliertype" />
+          <EntitySet Name="N_Logisticscompany" EntityType="Self.N_Logisticscompany" />
+          <EntitySet Name="O_Commodityinventory" EntityType="Self.O_Commodityinventory" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LaTuErModelStoreContainer" CdmEntityContainer="LaTuErEntities1">
+          <EntitySetMapping Name="A_UserLogin">
+            <EntityTypeMapping TypeName="LaTuErModel.A_UserLogin">
+              <MappingFragment StoreEntitySet="A-UserLogin">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+                <ScalarProperty Name="UserPhone" ColumnName="UserPhone" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="B_User_roles">
+            <EntityTypeMapping TypeName="LaTuErModel.B_User_roles">
+              <MappingFragment StoreEntitySet="B-User-roles">
+                <ScalarProperty Name="RolesId" ColumnName="RolesId" />
+                <ScalarProperty Name="Roles" ColumnName="Roles" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="C_Area">
+            <EntityTypeMapping TypeName="LaTuErModel.C_Area">
+              <MappingFragment StoreEntitySet="C-Area">
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="Pid" ColumnName="Pid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="D_address">
+            <EntityTypeMapping TypeName="LaTuErModel.D_address">
+              <MappingFragment StoreEntitySet="D-address">
+                <ScalarProperty Name="UseraddressId" ColumnName="UseraddressId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ConsigneeName" ColumnName="ConsigneeName" />
+                <ScalarProperty Name="UserPhone" ColumnName="UserPhone" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
+                <ScalarProperty Name="Detailedaddress" ColumnName="Detailedaddress" />
+                <ScalarProperty Name="Defaultstate" ColumnName="Defaultstate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="E_Commodity">
+            <EntityTypeMapping TypeName="LaTuErModel.E_Commodity">
+              <MappingFragment StoreEntitySet="E-Commodity">
+                <ScalarProperty Name="CommodityId" ColumnName="CommodityId" />
+                <ScalarProperty Name="Tradename" ColumnName="Tradename" />
+                <ScalarProperty Name="SubtitleofCommodity" ColumnName="SubtitleofCommodity" />
+                <ScalarProperty Name="Commodityclassification" ColumnName="Commodityclassification" />
+                <ScalarProperty Name="CommodityDescription" ColumnName="CommodityDescription" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Contactnumber" ColumnName="Contactnumber" />
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="Inventoryquantity" ColumnName="Inventoryquantity" />
+                <ScalarProperty Name="Commoditycategory" ColumnName="Commoditycategory" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="F_Commoditypictures">
+            <EntityTypeMapping TypeName="LaTuErModel.F_Commoditypictures">
+              <MappingFragment StoreEntitySet="F-Commoditypictures">
+                <ScalarProperty Name="CommoditypicturesId" ColumnName="CommoditypicturesId" />
+                <ScalarProperty Name="Picturedescription" ColumnName="Picturedescription" />
+                <ScalarProperty Name="Mastergraph" ColumnName="Mastergraph" />
+                <ScalarProperty Name="Pictureset" ColumnName="Pictureset" />
+                <ScalarProperty Name="CommodityId" ColumnName="CommodityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="G_Classification">
+            <EntityTypeMapping TypeName="LaTuErModel.G_Classification">
+              <MappingFragment StoreEntitySet="G-Classification">
+                <ScalarProperty Name="ClassificationId" ColumnName="ClassificationId" />
+                <ScalarProperty Name="Classificationname" ColumnName="Classificationname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="I_Order">
+            <EntityTypeMapping TypeName="LaTuErModel.I_Order">
+              <MappingFragment StoreEntitySet="I-Order">
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="Purchasequantity" ColumnName="Purchasequantity" />
+                <ScalarProperty Name="Orderamount" ColumnName="Orderamount" />
+                <ScalarProperty Name="Ordertime" ColumnName="Ordertime" />
+                <ScalarProperty Name="Couriernumber" ColumnName="Couriernumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="J_OrderXX">
+            <EntityTypeMapping TypeName="LaTuErModel.J_OrderXX">
+              <MappingFragment StoreEntitySet="J-OrderXX">
+                <ScalarProperty Name="OrderxxId" ColumnName="OrderxxId" />
+                <ScalarProperty Name="CommodityId" ColumnName="CommodityId" />
+                <ScalarProperty Name="Tradename" ColumnName="Tradename" />
+                <ScalarProperty Name="Ordertime" ColumnName="Ordertime" />
+                <ScalarProperty Name="PaymentmethodId" ColumnName="PaymentmethodId" />
+                <ScalarProperty Name="Itempricing" ColumnName="Itempricing" />
+                <ScalarProperty Name="Commoditypictures" ColumnName="Commoditypictures" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UseraddressId" ColumnName="UseraddressId" />
+                <ScalarProperty Name="Quantityofcommodities" ColumnName="Quantityofcommodities" />
+                <ScalarProperty Name="Orderstatus" ColumnName="Orderstatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="K_ShoppingCart">
+            <EntityTypeMapping TypeName="LaTuErModel.K_ShoppingCart">
+              <MappingFragment StoreEntitySet="K-ShoppingCart">
+                <ScalarProperty Name="ShoppingCartId" ColumnName="ShoppingCartId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CommodityId" ColumnName="CommodityId" />
+                <ScalarProperty Name="Quantityofcommodities" ColumnName="Quantityofcommodities" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="L_Supplier">
+            <EntityTypeMapping TypeName="LaTuErModel.L_Supplier">
+              <MappingFragment StoreEntitySet="L-Supplier">
+                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="Nameofsupplier" ColumnName="Nameofsupplier" />
+                <ScalarProperty Name="Suppliertype" ColumnName="Suppliertype" />
+                <ScalarProperty Name="SupplierTelephone" ColumnName="SupplierTelephone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_Suppliertype">
+            <EntityTypeMapping TypeName="LaTuErModel.M_Suppliertype">
+              <MappingFragment StoreEntitySet="M-Suppliertype">
+                <ScalarProperty Name="PlatformId" ColumnName="PlatformId" />
+                <ScalarProperty Name="platform" ColumnName="platform" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="N_Logisticscompany">
+            <EntityTypeMapping TypeName="LaTuErModel.N_Logisticscompany">
+              <MappingFragment StoreEntitySet="N-Logisticscompany">
+                <ScalarProperty Name="LogisticscompanyId" ColumnName="LogisticscompanyId" />
+                <ScalarProperty Name="NameofLogisticsCompany" ColumnName="NameofLogisticsCompany" />
+                <ScalarProperty Name="Logisticscompanycontacts" ColumnName="Logisticscompanycontacts" />
+                <ScalarProperty Name="Logisticstelephone" ColumnName="Logisticstelephone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="O_Commodityinventory">
+            <EntityTypeMapping TypeName="LaTuErModel.O_Commodityinventory">
+              <MappingFragment StoreEntitySet="O-Commodityinventory">
+                <ScalarProperty Name="StockId" ColumnName="StockId" />
+                <ScalarProperty Name="Commodity" ColumnName="Commodity" />
+                <ScalarProperty Name="Inventoryquantity" ColumnName="Inventoryquantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

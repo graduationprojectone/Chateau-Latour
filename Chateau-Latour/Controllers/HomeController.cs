@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chateau_Latour.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,13 @@ namespace Chateau_Latour.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public JsonResult Load()
+        {
+            LaTuErEntities1 db = new LaTuErEntities1();
+            var list = db.E_Commodity.ToList();
+            return Json(list,JsonRequestBehavior.AllowGet);
         }
     }
 }
