@@ -2,10 +2,11 @@
 @{
     Layout = null;
 }
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>商品详情</title>
+    <title>Checkout</title>
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -32,9 +33,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- animation-effect -->
     <link href="~/Content/animate.min.css" rel="stylesheet" />
     <script src="~/Scripts/wow.min.js"></script>
-    <script>new WOW().init();</script>
+    <script>
+        new WOW().init();
+    </script>
     <!-- //animation-effect -->
 </head>
+
 <body>
     <!-- 头部 -->
     <div class="header">
@@ -242,177 +246,146 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
                 <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
-                <li class="active">商品详情</li>
+                <li class="active">Checkout Page</li>
             </ol>
         </div>
     </div>
     <!-- //breadcrumbs -->
-    <!-- single -->
-    <div class="single">
+    <!-- checkout -->
+    <div class="checkout">
         <div class="container">
-            <div class="col-md-4 products-left">
-                <div class="filter-price animated wow slideInUp" data-wow-delay=".5s">
-                    <script type='text/javascript'>
-    //<![CDATA[
-                        $(window).load(function () {
-                            $("#slider-range").slider({
-                                range: true,
-                                min: 0,
-                                max: 100000,
-                                values: [10000, 60000],
-                                slide: function (event, ui) {
-                                    $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-                                }
-                            });
-                            $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
-
-
-                        });//]]></script>
-                    <script src="~/Scripts/jquery-ui.min.js"></script>
-                    <!---->
-                </div>
-            </div>
-            <div class="col-md-8 single-right" style=" margin-left :-150px;">
-                <div class="col-md-5 single-right-left animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="flexslider">
-                        <ul class="slides">
-                            <li data-thumb="/Images/Single/00.jpg">
-                                <div class="thumb-image"> <img src="~/Images/Single/00.jpg" data-imagezoom="true" class="img-responsive" style="width :286px;height :400px;"> </div>
-                            </li>
-                            <li data-thumb="/Images/Single/02.jpg">
-                                <div class="thumb-image"> <img src="~/Images/Single/02.jpg" data-imagezoom="true" class="img-responsive" style="width :286px;height :400px;"> </div>
-                            </li>
-                            <li data-thumb="/Images/Single/con-cp1.png">
-                                <div class="thumb-image"><img src="~/Images/Single/con-cp1.png" data-imagezoom="true" class="img-responsive" style="width :286px;height :400px;"> </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- flixslider -->
-                    <script src="~/Scripts/jquery.flexslider.js"></script>
-                    <link href="~/Content/flexslider.css" rel="stylesheet" />
-                    <script>
-    // Can also be used with $(document).ready()
-                        $(window).load(function () {
-                            $('.flexslider').flexslider({
-                                animation: "slide",
-                                controlNav: "thumbnails"
-                            });
-                        });
-
-/**/</script>
-                    <!-- flixslider -->
-                </div>
-                <div class="col-md-7 single-right-left simpleCart_shelfItem animated wow slideInRight" data-wow-delay=".5s">
-                    <h3>商品标题</h3>
-                    <h4><span class="item_price">$550</span></h4>
-                    <div class="rating1">
-                        <span class="starRating">
-                            <input id="rating5" type="radio" name="rating" value="5">
-                            <label for="rating5">5</label>
-                            <input id="rating4" type="radio" name="rating" value="4">
-                            <label for="rating4">4</label>
-                            <input id="rating3" type="radio" name="rating" value="3" checked>
-                            <label for="rating3">3</label>
-                            <input id="rating2" type="radio" name="rating" value="2">
-                            <label for="rating2">2</label>
-                            <input id="rating1" type="radio" name="rating" value="1">
-                            <label for="rating1">1</label>
-                        </span>
-                    </div>
-                    <div class="description">
-                        <h5><i>描述</i></h5>
-                        <p>
-                            哈哈
-                        </p>
-                    </div>
-                    <div class="color-quality">
-                        <div class="color-quality-left">
-                            <h5>纯度</h5>
-                            <ul>
-                                <li><a href="#"><span></span>30%</a></li>
-                                <li><a href="#" class="brown"><span></span>50%</a></li>
-                                <li><a href="#" class="purple"><span></span>70%</a></li>
-                                <li><a href="#" class="gray"><span></span>90%</a></li>
-                            </ul>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="occasion-cart" style=" margin-top :10px;">
-                        <a class="item_add" href="#">添加到购物车 </a>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-                <div class="bootstrap-tab animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-                        <ul id="myTab" class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">描述</a></li>
-                            <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">评论(2)</a></li>
-                        </ul>
-                        <div id="myTabContent" class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade in active bootstrap-tab-text" id="home" aria-labelledby="home-tab">
-                                <h5>产品简介</h5>
-                                <p>
-                                    嘻嘻嘻
-                                    <span>哈哈哈</span>
-                                </p>
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade bootstrap-tab-text" id="profile" aria-labelledby="profile-tab">
-                                <div class="bootstrap-tab-text-grids">
-                                    <div class="bootstrap-tab-text-grid">
-                                        <div class="bootstrap-tab-text-grid-left">
-                                            <img src="images/4.png" alt=" " class="img-responsive" />
-                                        </div>
-                                        <div class="bootstrap-tab-text-grid-right">
-                                            <ul>
-                                                <li><a href="#">用户</a></li>
-                                                <li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span>回复</a></li>
-                                            </ul>
-                                            <p>
-                                                啦啦啦
-                                            </p>
-                                        </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                    <div class="bootstrap-tab-text-grid">
-                                        <div class="bootstrap-tab-text-grid-left">
-                                            <img src="images/5.png" alt=" " class="img-responsive" />
-                                        </div>
-                                        <div class="bootstrap-tab-text-grid-right">
-                                            <ul>
-                                                <li><a href="#">用户1</a></li>
-                                                <li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span>回复</a></li>
-                                            </ul>
-                                            <p>
-                                                啊啊啊
-                                            </p>
-                                        </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                    <div class="add-review">
-                                        <h4>添加评论</h4>
-                                        <form>
-                                            <input type="text" value="名字" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-                                            <input type="email" value="邮箱" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-                                            <input type="text" value="标题" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="">
-                                            <textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">内容...</textarea>
-                                            <input type="submit" value="提交">
-                                        </form>
-                                    </div>
+            <div class="checkout-right animated wow slideInUp" data-wow-delay=".5s">
+                <table class="timetable_sub">
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>图片</th>
+                            <th>数量</th>
+                            <th>名称</th>
+                            <th>价格</th>
+                            <th>删除</th>
+                        </tr>
+                    </thead>
+                    <tr class="rem1">
+                        <td class="invert">1</td>
+                        <td class="invert-image"><a href="single.html"><img src="images/22.jpg" alt=" " class="img-responsive" /></a></td>
+                        <td class="invert">
+                            <div class="quantity">
+                                <div class="quantity-select">
+                                    <div class="entry value-minus">&nbsp;</div>
+                                    <div class="entry value"><span>1</span></div>
+                                    <div class="entry value-plus active">&nbsp;</div>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane fade bootstrap-tab-text" id="dropdown1" aria-labelledby="dropdown1-tab">
-                                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+                        </td>
+                        <td class="invert">Black Shoe</td>
+                        <td class="invert">$290.00</td>
+                        <td class="invert">
+                            <div class="rem">
+                                <div class="close1"> </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane fade bootstrap-tab-text" id="dropdown2" aria-labelledby="dropdown2-tab">
-                                <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+                            <script>
+                                $(document).ready(function (c) {
+                                    $('.close1').on('click', function (c) {
+                                        $('.rem1').fadeOut('slow', function (c) {
+                                            $('.rem1').remove();
+                                        });
+                                    });
+                                });
+                            </script>
+                        </td>
+                    </tr>
+                    <tr class="rem2">
+                        <td class="invert">2</td>
+                        <td class="invert-image"><a href="single.html"><img src="~/Images/Index/11.jpg" alt=" " class="img-responsive" /></a></td>
+                        <td class="invert">
+                            <div class="quantity">
+                                <div class="quantity-select">
+                                    <div class="entry value-minus">&nbsp;</div>
+                                    <div class="entry value"><span>1</span></div>
+                                    <div class="entry value-plus active">&nbsp;</div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                        </td>
+                        <td class="invert">Centre Table</td>
+                        <td class="invert">$250.00</td>
+                        <td class="invert">
+                            <div class="rem">
+                                <div class="close2"> </div>
+                            </div>
+                            <script>
+                                $(document).ready(function (c) {
+                                    $('.close2').on('click', function (c) {
+                                        $('.rem2').fadeOut('slow', function (c) {
+                                            $('.rem2').remove();
+                                        });
+                                    });
+                                });
+                            </script>
+                        </td>
+                    </tr>
+                    <tr class="rem3">
+                        <td class="invert">3</td>
+                        <td class="invert-image"><a href="single.html"><img src="~/Images/Index/11.jpg" alt=" " class="img-responsive" /></a></td>
+                        <td class="invert">
+                            <div class="quantity">
+                                <div class="quantity-select">
+                                    <div class="entry value-minus">&nbsp;</div>
+                                    <div class="entry value"><span>1</span></div>
+                                    <div class="entry value-plus active">&nbsp;</div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="invert">Stone Bangles</td>
+                        <td class="invert">$299.00</td>
+                        <td class="invert">
+                            <div class="rem">
+                                <div class="close3"> </div>
+                            </div>
+                            <script>
+                                $(document).ready(function (c) {
+                                    $('.close3').on('click', function (c) {
+                                        $('.rem3').fadeOut('slow', function (c) {
+                                            $('.rem3').remove();
+                                        });
+                                    });
+                                });
+                            </script>
+                        </td>
+                    </tr>
+                    <!--quantity-->
+                    <script>
+                        $('.value-plus').on('click', function () {
+                            var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10) + 1;
+                            divUpd.text(newVal);
+                        });
+
+                        $('.value-minus').on('click', function () {
+                            var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10) - 1;
+                            if (newVal >= 1) divUpd.text(newVal);
+                        });
+                    </script>
+                    <!--quantity-->
+                </table>
             </div>
-            <div class="clearfix"> </div>
+            <div class="checkout-left">
+                <div class="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">
+                    <h4>产品价格详情</h4>
+                    <ul>
+                        <li>产品1 <i>-</i> <span>$250.00 </span></li>
+                        <li>产品2 <i>-</i> <span>$290.00 </span></li>
+                        <li>产品3 <i>-</i> <span>$299.00 </span></li>
+                        <li>合计 <i>-</i> <span>$854.00</span></li>
+                    </ul>
+                </div>
+                <div class="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
+                    <a href="single.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>继续购物</a>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
         </div>
     </div>
+    <!-- //checkout -->
     <!-- 底部 -->
     <div class="footer">
         <div class="container">
@@ -510,8 +483,5 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //底部 -->
-    <!-- zooming-effect -->
-    <script src="~/Scripts/imagezoom.js"></script>
-    <!-- //zooming-effect -->
 </body>
 </html>
