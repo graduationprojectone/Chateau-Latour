@@ -127,6 +127,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\SingleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -191,6 +192,9 @@
     <Content Include="Images\Index\si.jpg" />
     <Content Include="Images\Index\si1.jpg" />
     <Content Include="Images\Index\si2.jpg" />
+    <Content Include="Images\Single\00.jpg" />
+    <Content Include="Images\Single\01.jpg" />
+    <Content Include="Images\Single\02.jpg" />
     <Content Include="Images\Single\1.jpg" />
     <Content Include="Images\Single\1.png" />
     <Content Include="Images\Single\2.jpg" />
@@ -237,6 +241,7 @@
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Single\Single.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

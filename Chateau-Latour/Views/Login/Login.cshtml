@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>商品详情</title>
+    <title>Login</title>
     <!-- for-mobile-apps -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -248,264 +248,105 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="container">
             <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
                 <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
-                <li class="active">商品详情</li>
+                <li class="active">Latour Login</li>
             </ol>
         </div>
     </div>
     <!-- //breadcrumbs -->
-    <!-- single -->
-    <div class="single">
+    <!-- login -->
+    <div class="login">
         <div class="container">
-            <div class="col-md-4 products-left">
-                <div class="filter-price animated wow slideInUp" data-wow-delay=".5s">
-                    <script type='text/javascript'>
-                        //<![CDATA[
-                        $(window).load(function () {
-                            $("#slider-range").slider({
-                                range: true,
-                                min: 0,
-                                max: 100000,
-                                values: [10000, 60000],
-                                slide: function (event, ui) {
-                                    $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-                                }
-                            });
-                            $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
-
-
-                        });//]]>
-                    </script>
-                    <script src="~/Scripts/jquery-ui.min.js"></script>
-                    <!---->
-                </div>
+            <h3 class="animated wow zoomIn" data-wow-delay=".5s">Latour Login</h3>
+            <div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
+                <form>
+                    <input type="text" placeholder="phone" required=" ">
+                    <input type="password" placeholder="Password" required=" ">
+                    <input type="submit" value="登录">
+                </form>
             </div>
-
-            <div class="col-md-8 single-right" style=" margin-left :-150px;">
-                <div class="col-md-5 single-right-left animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="flexslider">
-                        <ul class="slides">
-                            <li data-thumb="/Images/Single/00.jpg">
-                                <div class="thumb-image"> <img src="~/Images/Single/00.jpg" data-imagezoom="true" class="img-responsive" style="width :286px;height :400px;"> </div>
-                            </li>
-                            <li data-thumb="/Images/Single/02.jpg">
-                                <div class="thumb-image"> <img src="~/Images/Single/02.jpg" data-imagezoom="true" class="img-responsive" style="width :286px;height :400px;"> </div>
-                            </li>
-                            <li data-thumb="/Images/Single/con-cp1.png">
-                                <div class="thumb-image"><img src="~/Images/Single/con-cp1.png" data-imagezoom="true" class="img-responsive" style="width :286px;height :400px;"> </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- flixslider -->
-                    <script src="~/Scripts/jquery.flexslider.js"></script>
-                    <link href="~/Content/flexslider.css" rel="stylesheet" />
-                    <script>
-                        // Can also be used with $(document).ready()
-                        $(window).load(function () {
-                            $('.flexslider').flexslider({
-                                animation: "slide",
-                                controlNav: "thumbnails"
-                            });
-                        });
-
-/**/</script>
-                    <!-- flixslider -->
-                </div>
-                <div class="col-md-7 single-right-left simpleCart_shelfItem animated wow slideInRight" data-wow-delay=".5s">
-                    <h3>商品标题</h3>
-                    <h4><span class="item_price">$550</span></h4>
-                    <div class="rating1">
-                        <span class="starRating">
-                            <input id="rating5" type="radio" name="rating" value="5">
-                            <label for="rating5">5</label>
-                            <input id="rating4" type="radio" name="rating" value="4">
-                            <label for="rating4">4</label>
-                            <input id="rating3" type="radio" name="rating" value="3" checked>
-                            <label for="rating3">3</label>
-                            <input id="rating2" type="radio" name="rating" value="2">
-                            <label for="rating2">2</label>
-                            <input id="rating1" type="radio" name="rating" value="1">
-                            <label for="rating1">1</label>
-                        </span>
-                    </div>
-                    <div class="description">
-                        <h5><i>描述</i></h5>
-                        <p>
-                            哈哈
-                        </p>
-                    </div>
-                    <div class="color-quality">
-                        <div class="color-quality-left">
-                            <h5>纯度</h5>
-                            <ul>
-                                <li><a href="#"><span></span>30%</a></li>
-                                <li><a href="#" class="brown"><span></span>50%</a></li>
-                                <li><a href="#" class="purple"><span></span>70%</a></li>
-                                <li><a href="#" class="gray"><span></span>90%</a></li>
-                            </ul>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-
-                    <div class="occasion-cart" style=" margin-top :10px;">
-                        <a class="item_add" href="#">添加到购物车 </a>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-                <div class="bootstrap-tab animated wow slideInUp" data-wow-delay=".5s">
-                    <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-                        <ul id="myTab" class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">描述</a></li>
-                            <li role="presentation"><a href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile">评论(2)</a></li>
-
-                        </ul>
-                        <div id="myTabContent" class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade in active bootstrap-tab-text" id="home" aria-labelledby="home-tab">
-                                <h5>产品简介</h5>
-                                <p>
-                                    嘻嘻嘻
-                                    <span>哈哈哈</span>
-                                </p>
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade bootstrap-tab-text" id="profile" aria-labelledby="profile-tab">
-                                <div class="bootstrap-tab-text-grids">
-                                    <div class="bootstrap-tab-text-grid">
-                                        <div class="bootstrap-tab-text-grid-left">
-                                            <img src="images/4.png" alt=" " class="img-responsive" />
-                                        </div>
-                                        <div class="bootstrap-tab-text-grid-right">
-                                            <ul>
-                                                <li><a href="#">用户</a></li>
-                                                <li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span>回复</a></li>
-                                            </ul>
-                                            <p>
-                                                啦啦啦
-                                            </p>
-                                        </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                    <div class="bootstrap-tab-text-grid">
-                                        <div class="bootstrap-tab-text-grid-left">
-                                            <img src="images/5.png" alt=" " class="img-responsive" />
-                                        </div>
-                                        <div class="bootstrap-tab-text-grid-right">
-                                            <ul>
-                                                <li><a href="#">用户1</a></li>
-                                                <li><a href="#"><span class="glyphicon glyphicon-share" aria-hidden="true"></span>回复</a></li>
-                                            </ul>
-                                            <p>
-                                                啊啊啊
-                                            </p>
-                                        </div>
-                                        <div class="clearfix"> </div>
-                                    </div>
-                                    <div class="add-review">
-                                        <h4>添加评论</h4>
-                                        <form>
-                                            <input type="text" value="名字" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-                                            <input type="email" value="邮箱" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
-                                            <input type="text" value="标题" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Subject';}" required="">
-                                            <textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message...';}" required="">内容...</textarea>
-                                            <input type="submit" value="提交">
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade bootstrap-tab-text" id="dropdown1" aria-labelledby="dropdown1-tab">
-                                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade bootstrap-tab-text" id="dropdown2" aria-labelledby="dropdown2-tab">
-                                <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
         </div>
     </div>
-
+    <!-- //login -->
     <!-- footer -->
     <div class="footer">
         <div class="container">
             <div class="footer-grids">
                 <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
-                    <h3>关于我们</h3>
+                    <h3>About Us</h3>
                     <p>
-                        拉图尔酒庄<span>
-                            啦啦啦
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse.<span>
+                            Excepteur sint occaecat cupidatat
+                            non proident, sunt in culpa qui officia deserunt mollit.
                         </span>
                     </p>
                 </div>
                 <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".6s">
-                    <h3>联系信息</h3>
+                    <h3>Contact Info</h3>
                     <ul>
-                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>岳阳职业技术学院</li>
-                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="123456789qq.com">123456789qq.com</a></li>
-                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>1234 567 8910</li>
+                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
+                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
+                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
                     </ul>
                 </div>
                 <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".7s">
-                    <h3>Latour 帖子</h3>
+                    <h3>Flickr Posts</h3>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="images/13.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="images/14.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="images/15.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="images/16.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="images/13.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="images/14.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="images/15.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="images/16.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="images/13.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="images/14.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="images/15.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="images/16.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
                 <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".8s">
-                    <h3>Latour 博客</h3>
+                    <h3>Blog Posts</h3>
                     <div class="footer-grid-sub-grids">
                         <div class="footer-grid-sub-grid-left">
-                            <a href="single.html"><img src="~/Images/Single/con-cp1.png" alt=" " class="img-responsive" style=" width :76.5px;height :102px;" /></a>
+                            <a href="single.html"><img src="images/9.jpg" alt=" " class="img-responsive" /></a>
                         </div>
                         <div class="footer-grid-sub-grid-right">
-                            <h4><a href="single.html">拉图尔红酒</a></h4>
-                            <p>发表于2016年5月25日</p>
+                            <h4><a href="single.html">culpa qui officia deserunt</a></h4>
+                            <p>Posted On 25/3/2016</p>
                         </div>
                         <div class="clearfix"> </div>
                     </div>
                     <div class="footer-grid-sub-grids">
                         <div class="footer-grid-sub-grid-left">
-                            <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :76.5px;height :102px;" /></a>
+                            <a href="single.html"><img src="images/10.jpg" alt=" " class="img-responsive" /></a>
                         </div>
                         <div class="footer-grid-sub-grid-right">
-                            <h4><a href="single.html">拉图尔白兰地</a></h4>
-                            <p>
-                                发表于2016年5月25日
-
-                            </p>
+                            <h4><a href="single.html">Quis autem vel eum iure</a></h4>
+                            <p>Posted On 25/3/2016</p>
                         </div>
                         <div class="clearfix"> </div>
                     </div>
@@ -513,16 +354,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="clearfix"> </div>
             </div>
             <div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
-                <h2><a href="index.html">Latour <span>Enjoy quality</span></a></h2>
+                <h2><a href="index.html">Best Store <span>shop anywhere</span></a></h2>
             </div>
             <div class="copy-right animated wow slideInUp" data-wow-delay=".5s">
-                <p>版权所有 &copy; 2019.岳阳职业技术学院1705 </p>
+                <p>Copyright &copy; 2016.Company name All rights reserved.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>
             </div>
         </div>
     </div>
     <!-- //footer -->
-    <!-- zooming-effect -->
-    <script src="~/Scripts/imagezoom.js"></script>
-    <!-- //zooming-effect -->
 </body>
 </html>
