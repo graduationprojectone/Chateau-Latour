@@ -247,7 +247,7 @@ ul.multi-column-dropdown h6 {
     cursor: pointer;
 }
 .sb-search-submit {
-	background:#fff url(../images/img-sp.png) no-repeat 7px -91px;
+	background:#fff url(../Images/Index/img-sp.png) no-repeat 7px -91px;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; /* IE 8 */
     filter: alpha(opacity=0); /* IE 5-7 */
     color: transparent;
@@ -2003,23 +2003,23 @@ label.radio {
   opacity      : 0;
 }
 
-.starRating:not(old) > label {
-    float: right;
-    background: url(../Images/Index/1.jpg);
-    background-size: contain;
-    margin-right: 2px;
-}
+    .starRating:not(old) > label {
+        float: right;
+        background: url(../Images/Index/1.png);
+        background-size: contain;
+        margin-right: 2px;
+    }
 
-.starRating:not(old) > label:before{
-  content         : '';
-  display         : block;
-  width           : 18px;
-  height          : 18px;
-  background      : url(../Images/Index/2.jpg);
-  background-size : contain;
-  opacity         : 0;
-  transition      : opacity 0.2s linear;
-}
+        .starRating:not(old) > label:before {
+            content: '';
+            display: block;
+            width: 18px;
+            height: 18px;
+            background: url(../Images/Index/2.png);
+            background-size: contain;
+            opacity: 0;
+            transition: opacity 0.2s linear;
+        }
 
 .starRating:not(old) > label:hover:before,
 .starRating:not(old) > label:hover ~ label:before,
@@ -2044,9 +2044,9 @@ label.radio {
     display: block;
     width: 100%;
 }
-.login-form-grids input[type="email"]{
-	background:url(../Images/Index/img-sp.png) no-repeat 5px -182px #fff;
-}
+    .login-form-grids input[type="email"] {
+        background: url(../Images/Index/img-sp.png) no-repeat 5px -182px #fff;
+    }
 .login-form-grids input[type="password"]{
 	background:url(../Images/Index/img-sp.png) no-repeat 5px -220px #fff;
 	margin:1em 0 0;
