@@ -192,10 +192,14 @@
     <Content Include="Images\Index\si1.jpg" />
     <Content Include="Images\Index\si2.jpg" />
     <Content Include="Images\Single\1.jpg" />
+    <Content Include="Images\Single\1.png" />
     <Content Include="Images\Single\2.jpg" />
+    <Content Include="Images\Single\2.png" />
     <Content Include="Images\Single\3.jpg" />
     <Content Include="Images\Single\4.gif" />
     <Content Include="Images\Single\5.jpg" />
+    <Content Include="Images\Single\con-cp1.png" />
+    <Content Include="Images\Single\conlist-cp1.jpg" />
     <Content Include="Scripts\bootstrap-3.1.1.min.js" />
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\imagezoom.js" />
