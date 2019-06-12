@@ -134,6 +134,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\gwcController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\registerController.cs" />
@@ -351,6 +352,7 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Single\Single.cshtml" />
     <Content Include="Views\register\register.cshtml" />
+    <Content Include="Views\gwc\gwc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
