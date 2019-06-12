@@ -45,10 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -130,6 +138,63 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\A_UserLogin.cs">
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\B_User_roles.cs">
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\C_Area.cs">
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\D_address.cs">
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\E_Commodity.cs">
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\F_Commoditypictures.cs">
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\G_Classification.cs">
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\I_Order.cs">
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\J_OrderXX.cs">
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\K_ShoppingCart.cs">
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LaTuEr.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaTuEr.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LaTuEr.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LaTuEr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaTuEr.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\L_Supplier.cs">
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\M_Suppliertype.cs">
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\N_Logisticscompany.cs">
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\O_Commodityinventory.cs">
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -142,6 +207,13 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Commodity\sp1_1.jpg" />
+    <Content Include="Images\Commodity\sp1_2.jpg" />
+    <Content Include="Images\Commodity\sp1_3.jpg" />
+    <Content Include="Images\Commodity\sp1_4.jpg" />
+    <Content Include="Images\Commodity\sp2_1.jpg" />
+    <Content Include="Images\Commodity\sp2_2.jpg" />
+    <Content Include="Images\Commodity\sp2_3.jpg" />
     <Content Include="Images\Index\1.jpg" />
     <Content Include="Images\Index\1.png" />
     <Content Include="Images\Index\10.jpg" />
@@ -187,9 +259,26 @@
     <Content Include="Images\Index\check.png" />
     <Content Include="Images\Index\close_1.png" />
     <Content Include="Images\Index\img-sp.png" />
+    <Content Include="Images\Index\index1.jpg" />
+    <Content Include="Images\Index\index2.jpg" />
+    <Content Include="Images\Index\index3.jpg" />
+    <Content Include="Images\Index\index4.jpg" />
+    <Content Include="Images\Index\index5.jpg" />
+    <Content Include="Images\Index\logo.jpg" />
     <Content Include="Images\Index\si.jpg" />
     <Content Include="Images\Index\si1.jpg" />
     <Content Include="Images\Index\si2.jpg" />
+    <Content Include="Images\Index\深蓝伏特加.jpg" />
+    <Content Include="Models\LaTuEr.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LaTuEr.Context.cs</LastGenOutput>
+      <DependentUpon>LaTuEr.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\LaTuEr.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LaTuEr.edmx</DependentUpon>
+      <LastGenOutput>LaTuEr.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap-3.1.1.min.js" />
     <Content Include="Scripts\classie.js" />
     <Content Include="Scripts\imagezoom.js" />
@@ -202,6 +291,7 @@
     <Content Include="Scripts\simpleCart.min.js" />
     <Content Include="Scripts\uisearch.js" />
     <Content Include="Scripts\wow.min.js" />
+    <Content Include="Scripts\YinXinXin\Index.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -216,16 +306,27 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\Default\" />
+    <Folder Include="Scripts\GaoMeng\" />
+    <Folder Include="Scripts\WangJiaWen\" />
+    <Folder Include="Scripts\WangJie\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <EntityDeploy Include="Models\LaTuEr.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LaTuEr.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\LaTuEr.edmx.diagram">
+      <DependentUpon>LaTuEr.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
