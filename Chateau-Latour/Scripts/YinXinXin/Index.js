@@ -25,7 +25,8 @@
                     '<h4><a href="single.html">' + rs[i].Tradename +'</a></h4>' +
                     '<p>' + rs[i].Contactnumber+'</p>' +
                     '<div class="new-collections-grid1-left simpleCart_shelfItem">' +
-                    '<p><i>￥' + rs[i].Commodityclassification +'</i> <span class="item_price">￥' + rs[i].Price +'</span><a class="item_add" href="#">加入购物车 </a></p></div></div>' 
+                    '<p><i>￥' + rs[i].Commodityclassification + '</i> <span class="item_price">￥' + rs[i].Price + '</span><a class="item_add" href="#">加入购物车 </a></p></div></div>' +
+                    '<div style="width:100%;height:20px"></div>'
                 );
                 $("#conter-first").append(my_html);
             }
