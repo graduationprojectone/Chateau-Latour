@@ -4,21 +4,24 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="cdd03e3bc9bb438e9ba5b63cc26e4ce5" Name="Diagram1">
-        <EntityTypeShape EntityType="LaTuErModel.A_UserLogin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LaTuErModel.B_User_roles" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LaTuErModel.C_Area" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LaTuErModel.D_address" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LaTuErModel.E_Commodity" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LaTuErModel.F_Commoditypictures" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LaTuErModel.G_Classification" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LaTuErModel.I_Order" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LaTuErModel.J_OrderXX" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LaTuErModel.K_ShoppingCart" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LaTuErModel.L_Supplier" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LaTuErModel.M_Suppliertype" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LaTuErModel.N_Logisticscompany" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="LaTuErModel.O_Commodityinventory" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+      <Diagram DiagramId="5b7e7c79acae418794bcb65904c5715d" Name="Diagram1">
+        <EntityTypeShape EntityType="LaTuErModel.A_UserLogin" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaTuErModel.B_User_roles" Width="1.5" PointX="1.5" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaTuErModel.E_Commodity" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaTuErModel.F_Commoditypictures" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaTuErModel.G_Classification" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaTuErModel.ShoppingCart" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaTuErModel.J_OrderXX" Width="1.5" PointX="6" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="LaTuErModel.O_Commodityinventory" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <AssociationConnector Association="LaTuErModel.FK_A_UserLogin_B_User_roles" ManuallyRouted="false" />
+        <AssociationConnector Association="LaTuErModel.FK_E_Commodity_A_UserLogin" ManuallyRouted="false" />
+        <AssociationConnector Association="LaTuErModel.FK_J_OrderXX_A_UserLogin" ManuallyRouted="false" />
+        <AssociationConnector Association="LaTuErModel.FK_ShoppingCart_A_UserLogin" ManuallyRouted="false" />
+        <AssociationConnector Association="LaTuErModel.FK_B_User_roles_B_User_roles" ManuallyRouted="false" />
+        <AssociationConnector Association="LaTuErModel.FK_F_Commoditypictures_E_Commodity" ManuallyRouted="false" />
+        <AssociationConnector Association="LaTuErModel.FK_J_OrderXX_E_Commodity" ManuallyRouted="false" />
+        <AssociationConnector Association="LaTuErModel.FK_O_Commodityinventory_E_Commodity" ManuallyRouted="false" />
+        <AssociationConnector Association="LaTuErModel.FK_ShoppingCart_E_Commodity" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

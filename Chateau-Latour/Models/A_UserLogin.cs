@@ -14,10 +14,27 @@ namespace Chateau_Latour.Models
     
     public partial class A_UserLogin
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public A_UserLogin()
+        {
+            this.E_Commodity = new HashSet<E_Commodity>();
+            this.J_OrderXX = new HashSet<J_OrderXX>();
+            this.ShoppingCarts = new HashSet<ShoppingCart>();
+        }
+    
         public int UserId { get; set; }
         public string UserName { get; set; }
         public string UserPwd { get; set; }
         public string UserPhone { get; set; }
-        public Nullable<int> role { get; set; }
+        public Nullable<int> RolesId { get; set; }
+        public string Address { get; set; }
+    
+        public virtual B_User_roles B_User_roles { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<E_Commodity> E_Commodity { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<J_OrderXX> J_OrderXX { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ShoppingCart> ShoppingCarts { get; set; }
     }
 }

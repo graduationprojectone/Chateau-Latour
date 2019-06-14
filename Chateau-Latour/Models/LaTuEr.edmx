@@ -13,7 +13,8 @@
           <Property Name="UserName" Type="nvarchar" MaxLength="50" />
           <Property Name="UserPwd" Type="nvarchar" MaxLength="50" />
           <Property Name="UserPhone" Type="nchar" MaxLength="11" />
-          <Property Name="role" Type="int" />
+          <Property Name="RolesId" Type="int" />
+          <Property Name="Address" Type="nvarchar" MaxLength="256" />
         </EntityType>
         <EntityType Name="B-User-roles">
           <Key>
@@ -21,28 +22,6 @@
           </Key>
           <Property Name="RolesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Roles" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="C-Area">
-          <Key>
-            <PropertyRef Name="AreaId" />
-          </Key>
-          <Property Name="AreaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="AreaCode" Type="nvarchar" MaxLength="50" />
-          <Property Name="AreaName" Type="nvarchar" MaxLength="50" />
-          <Property Name="Pid" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="D-address">
-          <Key>
-            <PropertyRef Name="UseraddressId" />
-          </Key>
-          <Property Name="UseraddressId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserId" Type="int" />
-          <Property Name="ConsigneeName" Type="nvarchar" MaxLength="50" />
-          <Property Name="UserPhone" Type="nvarchar" MaxLength="50" />
-          <Property Name="AreaId" Type="int" />
-          <Property Name="Zipcode" Type="int" />
-          <Property Name="Detailedaddress" Type="nvarchar" MaxLength="250" />
-          <Property Name="Defaultstate" Type="int" />
         </EntityType>
         <EntityType Name="E-Commodity">
           <Key>
@@ -55,7 +34,7 @@
           <Property Name="CommodityDescription" Type="nvarchar" MaxLength="250" />
           <Property Name="Price" Type="money" />
           <Property Name="Contactnumber" Type="nvarchar" MaxLength="100" />
-          <Property Name="SupplierId" Type="int" />
+          <Property Name="UserId" Type="int" />
           <Property Name="Inventoryquantity" Type="int" />
           <Property Name="Commoditycategory" Type="int" />
           <Property Name="Image" Type="nvarchar" MaxLength="250" />
@@ -68,7 +47,7 @@
           <Property Name="Picturedescription" Type="nvarchar" MaxLength="250" />
           <Property Name="Mastergraph" Type="nvarchar(max)" />
           <Property Name="Pictureset" Type="nvarchar(max)" />
-          <Property Name="CommodityId" Type="int" />
+          <Property Name="CommodityId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="G-Classification">
           <Key>
@@ -78,99 +57,219 @@
           <Property Name="Classificationname" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--生成过程中发现错误:
-警告 6013: 表/视图“LaTuEr.dbo.H-Comment”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
-        <EntityType Name="H-Comment">
-          <Property Name="CommentId" Type="int" />
-          <Property Name="CommodityId" Type="int" />
-          <Property Name="UserId" Type="int" />
-          <Property Name="Tradename" Type="nvarchar" MaxLength="50" />
-          <Property Name="Commentcontent" Type="nvarchar" MaxLength="250" />
-          <Property Name="score" Type="int" />
-          <Property Name="Commentarytime" Type="datetime" />
-        </EntityType>-->
-        <EntityType Name="I-Order">
-          <Key>
-            <PropertyRef Name="OrderId" />
-          </Key>
-          <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Purchasequantity" Type="int" />
-          <Property Name="Orderamount" Type="money" />
-          <Property Name="Ordertime" Type="datetime" />
-          <Property Name="Couriernumber" Type="nvarchar" MaxLength="50" />
-        </EntityType>
+警告 6002: 表/视图“LaTuEr.dbo.J-OrderXX”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="J-OrderXX">
           <Key>
             <PropertyRef Name="OrderxxId" />
+            <PropertyRef Name="CommodityId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="OrderId" />
           </Key>
           <Property Name="OrderxxId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CommodityId" Type="int" />
+          <Property Name="CommodityId" Type="int" Nullable="false" />
           <Property Name="Tradename" Type="nvarchar" MaxLength="50" />
           <Property Name="Ordertime" Type="datetime" />
           <Property Name="PaymentmethodId" Type="int" />
           <Property Name="Itempricing" Type="money" />
           <Property Name="Commoditypictures" Type="nvarchar(max)" />
-          <Property Name="UserId" Type="int" />
-          <Property Name="UseraddressId" Type="int" />
+          <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="Quantityofcommodities" Type="int" />
           <Property Name="Orderstatus" Type="int" />
+          <Property Name="OrderId" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="K-ShoppingCart">
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“LaTuEr.dbo.O-Commodityinventory”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="O-Commodityinventory">
+          <Key>
+            <PropertyRef Name="StockId" />
+            <PropertyRef Name="CommodityId" />
+          </Key>
+          <Property Name="StockId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CommodityId" Type="int" Nullable="false" />
+          <Property Name="Inventoryquantity" Type="int" />
+        </EntityType>
+        <EntityType Name="ShoppingCart">
           <Key>
             <PropertyRef Name="ShoppingCartId" />
           </Key>
           <Property Name="ShoppingCartId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserId" Type="int" />
+          <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="CommodityId" Type="int" />
           <Property Name="Quantityofcommodities" Type="int" />
         </EntityType>
-        <EntityType Name="L-Supplier">
-          <Key>
-            <PropertyRef Name="SupplierId" />
-          </Key>
-          <Property Name="SupplierId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Nameofsupplier" Type="nvarchar" MaxLength="50" />
-          <Property Name="Suppliertype" Type="int" />
-          <Property Name="SupplierTelephone" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="M-Suppliertype">
-          <Key>
-            <PropertyRef Name="PlatformId" />
-          </Key>
-          <Property Name="PlatformId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="platform" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="N-Logisticscompany">
-          <Key>
-            <PropertyRef Name="LogisticscompanyId" />
-          </Key>
-          <Property Name="LogisticscompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NameofLogisticsCompany" Type="nvarchar" MaxLength="50" />
-          <Property Name="Logisticscompanycontacts" Type="nvarchar" MaxLength="50" />
-          <Property Name="Logisticstelephone" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="O-Commodityinventory">
-          <Key>
-            <PropertyRef Name="StockId" />
-          </Key>
-          <Property Name="StockId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Commodity" Type="int" />
-          <Property Name="Inventoryquantity" Type="int" />
-        </EntityType>
+        <Association Name="FK_A-UserLogin_B-User-roles">
+          <End Role="B-User-roles" Type="Self.B-User-roles" Multiplicity="0..1" />
+          <End Role="A-UserLogin" Type="Self.A-UserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="B-User-roles">
+              <PropertyRef Name="RolesId" />
+            </Principal>
+            <Dependent Role="A-UserLogin">
+              <PropertyRef Name="RolesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_B-User-roles_B-User-roles">
+          <End Role="B-User-roles" Type="Self.B-User-roles" Multiplicity="1" />
+          <End Role="B-User-roles1" Type="Self.B-User-roles" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="B-User-roles">
+              <PropertyRef Name="RolesId" />
+            </Principal>
+            <Dependent Role="B-User-roles1">
+              <PropertyRef Name="RolesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_E-Commodity_A-UserLogin">
+          <End Role="A-UserLogin" Type="Self.A-UserLogin" Multiplicity="0..1" />
+          <End Role="E-Commodity" Type="Self.E-Commodity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="A-UserLogin">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="E-Commodity">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_F-Commoditypictures_E-Commodity">
+          <End Role="E-Commodity" Type="Self.E-Commodity" Multiplicity="1" />
+          <End Role="F-Commoditypictures" Type="Self.F-Commoditypictures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="E-Commodity">
+              <PropertyRef Name="CommodityId" />
+            </Principal>
+            <Dependent Role="F-Commoditypictures">
+              <PropertyRef Name="CommodityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_J-OrderXX_A-UserLogin">
+          <End Role="A-UserLogin" Type="Self.A-UserLogin" Multiplicity="1" />
+          <End Role="J-OrderXX" Type="Self.J-OrderXX" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="A-UserLogin">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="J-OrderXX">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_J-OrderXX_E-Commodity">
+          <End Role="E-Commodity" Type="Self.E-Commodity" Multiplicity="1" />
+          <End Role="J-OrderXX" Type="Self.J-OrderXX" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="E-Commodity">
+              <PropertyRef Name="CommodityId" />
+            </Principal>
+            <Dependent Role="J-OrderXX">
+              <PropertyRef Name="CommodityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_O-Commodityinventory_E-Commodity">
+          <End Role="E-Commodity" Type="Self.E-Commodity" Multiplicity="1" />
+          <End Role="O-Commodityinventory" Type="Self.O-Commodityinventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="E-Commodity">
+              <PropertyRef Name="CommodityId" />
+            </Principal>
+            <Dependent Role="O-Commodityinventory">
+              <PropertyRef Name="CommodityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShoppingCart_A-UserLogin">
+          <End Role="A-UserLogin" Type="Self.A-UserLogin" Multiplicity="1" />
+          <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="A-UserLogin">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ShoppingCart">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShoppingCart_E-Commodity">
+          <End Role="E-Commodity" Type="Self.E-Commodity" Multiplicity="0..1" />
+          <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="E-Commodity">
+              <PropertyRef Name="CommodityId" />
+            </Principal>
+            <Dependent Role="ShoppingCart">
+              <PropertyRef Name="CommodityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="LaTuErModelStoreContainer">
           <EntitySet Name="A-UserLogin" EntityType="Self.A-UserLogin" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="B-User-roles" EntityType="Self.B-User-roles" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="C-Area" EntityType="Self.C-Area" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="D-address" EntityType="Self.D-address" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="E-Commodity" EntityType="Self.E-Commodity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="F-Commoditypictures" EntityType="Self.F-Commoditypictures" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="G-Classification" EntityType="Self.G-Classification" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="I-Order" EntityType="Self.I-Order" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="J-OrderXX" EntityType="Self.J-OrderXX" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="K-ShoppingCart" EntityType="Self.K-ShoppingCart" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="L-Supplier" EntityType="Self.L-Supplier" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="M-Suppliertype" EntityType="Self.M-Suppliertype" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="N-Logisticscompany" EntityType="Self.N-Logisticscompany" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="O-Commodityinventory" EntityType="Self.O-Commodityinventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShoppingCart" EntityType="Self.ShoppingCart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="J-OrderXX" EntityType="Self.J-OrderXX" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [J-OrderXX].[OrderxxId] AS [OrderxxId], 
+    [J-OrderXX].[CommodityId] AS [CommodityId], 
+    [J-OrderXX].[Tradename] AS [Tradename], 
+    [J-OrderXX].[Ordertime] AS [Ordertime], 
+    [J-OrderXX].[PaymentmethodId] AS [PaymentmethodId], 
+    [J-OrderXX].[Itempricing] AS [Itempricing], 
+    [J-OrderXX].[Commoditypictures] AS [Commoditypictures], 
+    [J-OrderXX].[UserId] AS [UserId], 
+    [J-OrderXX].[Quantityofcommodities] AS [Quantityofcommodities], 
+    [J-OrderXX].[Orderstatus] AS [Orderstatus], 
+    [J-OrderXX].[OrderId] AS [OrderId]
+    FROM [dbo].[J-OrderXX] AS [J-OrderXX]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="O-Commodityinventory" EntityType="Self.O-Commodityinventory" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [O-Commodityinventory].[StockId] AS [StockId], 
+    [O-Commodityinventory].[CommodityId] AS [CommodityId], 
+    [O-Commodityinventory].[Inventoryquantity] AS [Inventoryquantity]
+    FROM [dbo].[O-Commodityinventory] AS [O-Commodityinventory]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_A-UserLogin_B-User-roles" Association="Self.FK_A-UserLogin_B-User-roles">
+            <End Role="B-User-roles" EntitySet="B-User-roles" />
+            <End Role="A-UserLogin" EntitySet="A-UserLogin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_B-User-roles_B-User-roles" Association="Self.FK_B-User-roles_B-User-roles">
+            <End Role="B-User-roles" EntitySet="B-User-roles" />
+            <End Role="B-User-roles1" EntitySet="B-User-roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_E-Commodity_A-UserLogin" Association="Self.FK_E-Commodity_A-UserLogin">
+            <End Role="A-UserLogin" EntitySet="A-UserLogin" />
+            <End Role="E-Commodity" EntitySet="E-Commodity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_F-Commoditypictures_E-Commodity" Association="Self.FK_F-Commoditypictures_E-Commodity">
+            <End Role="E-Commodity" EntitySet="E-Commodity" />
+            <End Role="F-Commoditypictures" EntitySet="F-Commoditypictures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_J-OrderXX_A-UserLogin" Association="Self.FK_J-OrderXX_A-UserLogin">
+            <End Role="A-UserLogin" EntitySet="A-UserLogin" />
+            <End Role="J-OrderXX" EntitySet="J-OrderXX" />
+          </AssociationSet>
+          <AssociationSet Name="FK_J-OrderXX_E-Commodity" Association="Self.FK_J-OrderXX_E-Commodity">
+            <End Role="E-Commodity" EntitySet="E-Commodity" />
+            <End Role="J-OrderXX" EntitySet="J-OrderXX" />
+          </AssociationSet>
+          <AssociationSet Name="FK_O-Commodityinventory_E-Commodity" Association="Self.FK_O-Commodityinventory_E-Commodity">
+            <End Role="E-Commodity" EntitySet="E-Commodity" />
+            <End Role="O-Commodityinventory" EntitySet="O-Commodityinventory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShoppingCart_A-UserLogin" Association="Self.FK_ShoppingCart_A-UserLogin">
+            <End Role="A-UserLogin" EntitySet="A-UserLogin" />
+            <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShoppingCart_E-Commodity" Association="Self.FK_ShoppingCart_E-Commodity">
+            <End Role="E-Commodity" EntitySet="E-Commodity" />
+            <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -185,7 +284,12 @@
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserPhone" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
-          <Property Name="role" Type="Int32" />
+          <Property Name="RolesId" Type="Int32" />
+          <Property Name="Address" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="B_User_roles" Relationship="Self.FK_A_UserLogin_B_User_roles" FromRole="A_UserLogin" ToRole="B_User_roles" />
+          <NavigationProperty Name="E_Commodity" Relationship="Self.FK_E_Commodity_A_UserLogin" FromRole="A_UserLogin" ToRole="E_Commodity" />
+          <NavigationProperty Name="J_OrderXX" Relationship="Self.FK_J_OrderXX_A_UserLogin" FromRole="A_UserLogin" ToRole="J_OrderXX" />
+          <NavigationProperty Name="ShoppingCarts" Relationship="Self.FK_ShoppingCart_A_UserLogin" FromRole="A_UserLogin" ToRole="ShoppingCart" />
         </EntityType>
         <EntityType Name="B_User_roles">
           <Key>
@@ -193,28 +297,9 @@
           </Key>
           <Property Name="RolesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Roles" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="C_Area">
-          <Key>
-            <PropertyRef Name="AreaId" />
-          </Key>
-          <Property Name="AreaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="AreaCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Pid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="D_address">
-          <Key>
-            <PropertyRef Name="UseraddressId" />
-          </Key>
-          <Property Name="UseraddressId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserId" Type="Int32" />
-          <Property Name="ConsigneeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="UserPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AreaId" Type="Int32" />
-          <Property Name="Zipcode" Type="Int32" />
-          <Property Name="Detailedaddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
-          <Property Name="Defaultstate" Type="Int32" />
+          <NavigationProperty Name="A_UserLogin" Relationship="Self.FK_A_UserLogin_B_User_roles" FromRole="B_User_roles" ToRole="A_UserLogin" />
+          <NavigationProperty Name="B_User_roles1" Relationship="Self.FK_B_User_roles_B_User_roles" FromRole="B_User_roles" ToRole="B_User_roles1" />
+          <NavigationProperty Name="B_User_roles2" Relationship="Self.FK_B_User_roles_B_User_roles" FromRole="B_User_roles1" ToRole="B_User_roles" />
         </EntityType>
         <EntityType Name="E_Commodity">
           <Key>
@@ -227,10 +312,15 @@
           <Property Name="CommodityDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Contactnumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="SupplierId" Type="Int32" />
+          <Property Name="UserId" Type="Int32" />
           <Property Name="Inventoryquantity" Type="Int32" />
           <Property Name="Commoditycategory" Type="Int32" />
           <Property Name="Image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="A_UserLogin" Relationship="Self.FK_E_Commodity_A_UserLogin" FromRole="E_Commodity" ToRole="A_UserLogin" />
+          <NavigationProperty Name="F_Commoditypictures" Relationship="Self.FK_F_Commoditypictures_E_Commodity" FromRole="E_Commodity" ToRole="F_Commoditypictures" />
+          <NavigationProperty Name="J_OrderXX" Relationship="Self.FK_J_OrderXX_E_Commodity" FromRole="E_Commodity" ToRole="J_OrderXX" />
+          <NavigationProperty Name="O_Commodityinventory" Relationship="Self.FK_O_Commodityinventory_E_Commodity" FromRole="E_Commodity" ToRole="O_Commodityinventory" />
+          <NavigationProperty Name="ShoppingCarts" Relationship="Self.FK_ShoppingCart_E_Commodity" FromRole="E_Commodity" ToRole="ShoppingCart" />
         </EntityType>
         <EntityType Name="F_Commoditypictures">
           <Key>
@@ -240,7 +330,8 @@
           <Property Name="Picturedescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Mastergraph" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Pictureset" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CommodityId" Type="Int32" />
+          <Property Name="CommodityId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="E_Commodity" Relationship="Self.FK_F_Commoditypictures_E_Commodity" FromRole="F_Commoditypictures" ToRole="E_Commodity" />
         </EntityType>
         <EntityType Name="G_Classification">
           <Key>
@@ -249,89 +340,201 @@
           <Property Name="ClassificationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Classificationname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="I_Order">
+        <EntityType Name="ShoppingCart">
           <Key>
-            <PropertyRef Name="OrderId" />
+            <PropertyRef Name="ShoppingCartId" />
           </Key>
-          <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Purchasequantity" Type="Int32" />
-          <Property Name="Orderamount" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="Ordertime" Type="DateTime" Precision="3" />
-          <Property Name="Couriernumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShoppingCartId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CommodityId" Type="Int32" />
+          <Property Name="Quantityofcommodities" Type="Int32" />
+          <NavigationProperty Name="A_UserLogin" Relationship="Self.FK_ShoppingCart_A_UserLogin" FromRole="ShoppingCart" ToRole="A_UserLogin" />
+          <NavigationProperty Name="E_Commodity" Relationship="Self.FK_ShoppingCart_E_Commodity" FromRole="ShoppingCart" ToRole="E_Commodity" />
         </EntityType>
         <EntityType Name="J_OrderXX">
           <Key>
             <PropertyRef Name="OrderxxId" />
+            <PropertyRef Name="CommodityId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="OrderId" />
           </Key>
           <Property Name="OrderxxId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CommodityId" Type="Int32" />
+          <Property Name="CommodityId" Type="Int32" Nullable="false" />
           <Property Name="Tradename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Ordertime" Type="DateTime" Precision="3" />
           <Property Name="PaymentmethodId" Type="Int32" />
           <Property Name="Itempricing" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="Commoditypictures" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="UserId" Type="Int32" />
-          <Property Name="UseraddressId" Type="Int32" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
           <Property Name="Quantityofcommodities" Type="Int32" />
           <Property Name="Orderstatus" Type="Int32" />
-        </EntityType>
-        <EntityType Name="K_ShoppingCart">
-          <Key>
-            <PropertyRef Name="ShoppingCartId" />
-          </Key>
-          <Property Name="ShoppingCartId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserId" Type="Int32" />
-          <Property Name="CommodityId" Type="Int32" />
-          <Property Name="Quantityofcommodities" Type="Int32" />
-        </EntityType>
-        <EntityType Name="L_Supplier">
-          <Key>
-            <PropertyRef Name="SupplierId" />
-          </Key>
-          <Property Name="SupplierId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nameofsupplier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Suppliertype" Type="Int32" />
-          <Property Name="SupplierTelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="M_Suppliertype">
-          <Key>
-            <PropertyRef Name="PlatformId" />
-          </Key>
-          <Property Name="PlatformId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="platform" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="N_Logisticscompany">
-          <Key>
-            <PropertyRef Name="LogisticscompanyId" />
-          </Key>
-          <Property Name="LogisticscompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NameofLogisticsCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Logisticscompanycontacts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Logisticstelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="A_UserLogin" Relationship="Self.FK_J_OrderXX_A_UserLogin" FromRole="J_OrderXX" ToRole="A_UserLogin" />
+          <NavigationProperty Name="E_Commodity" Relationship="Self.FK_J_OrderXX_E_Commodity" FromRole="J_OrderXX" ToRole="E_Commodity" />
         </EntityType>
         <EntityType Name="O_Commodityinventory">
           <Key>
             <PropertyRef Name="StockId" />
+            <PropertyRef Name="CommodityId" />
           </Key>
           <Property Name="StockId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Commodity" Type="Int32" />
+          <Property Name="CommodityId" Type="Int32" Nullable="false" />
           <Property Name="Inventoryquantity" Type="Int32" />
+          <NavigationProperty Name="E_Commodity" Relationship="Self.FK_O_Commodityinventory_E_Commodity" FromRole="O_Commodityinventory" ToRole="E_Commodity" />
         </EntityType>
+        <Association Name="FK_A_UserLogin_B_User_roles">
+          <End Role="B_User_roles" Type="Self.B_User_roles" Multiplicity="0..1" />
+          <End Role="A_UserLogin" Type="Self.A_UserLogin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="B_User_roles">
+              <PropertyRef Name="RolesId" />
+            </Principal>
+            <Dependent Role="A_UserLogin">
+              <PropertyRef Name="RolesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_E_Commodity_A_UserLogin">
+          <End Role="A_UserLogin" Type="Self.A_UserLogin" Multiplicity="0..1" />
+          <End Role="E_Commodity" Type="Self.E_Commodity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="A_UserLogin">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="E_Commodity">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_J_OrderXX_A_UserLogin">
+          <End Role="A_UserLogin" Type="Self.A_UserLogin" Multiplicity="1" />
+          <End Role="J_OrderXX" Type="Self.J_OrderXX" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="A_UserLogin">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="J_OrderXX">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShoppingCart_A_UserLogin">
+          <End Role="A_UserLogin" Type="Self.A_UserLogin" Multiplicity="1" />
+          <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="A_UserLogin">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="ShoppingCart">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_B_User_roles_B_User_roles">
+          <End Role="B_User_roles" Type="Self.B_User_roles" Multiplicity="1" />
+          <End Role="B_User_roles1" Type="Self.B_User_roles" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="B_User_roles">
+              <PropertyRef Name="RolesId" />
+            </Principal>
+            <Dependent Role="B_User_roles1">
+              <PropertyRef Name="RolesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_F_Commoditypictures_E_Commodity">
+          <End Role="E_Commodity" Type="Self.E_Commodity" Multiplicity="1" />
+          <End Role="F_Commoditypictures" Type="Self.F_Commoditypictures" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="E_Commodity">
+              <PropertyRef Name="CommodityId" />
+            </Principal>
+            <Dependent Role="F_Commoditypictures">
+              <PropertyRef Name="CommodityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_J_OrderXX_E_Commodity">
+          <End Role="E_Commodity" Type="Self.E_Commodity" Multiplicity="1" />
+          <End Role="J_OrderXX" Type="Self.J_OrderXX" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="E_Commodity">
+              <PropertyRef Name="CommodityId" />
+            </Principal>
+            <Dependent Role="J_OrderXX">
+              <PropertyRef Name="CommodityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_O_Commodityinventory_E_Commodity">
+          <End Role="E_Commodity" Type="Self.E_Commodity" Multiplicity="1" />
+          <End Role="O_Commodityinventory" Type="Self.O_Commodityinventory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="E_Commodity">
+              <PropertyRef Name="CommodityId" />
+            </Principal>
+            <Dependent Role="O_Commodityinventory">
+              <PropertyRef Name="CommodityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ShoppingCart_E_Commodity">
+          <End Role="E_Commodity" Type="Self.E_Commodity" Multiplicity="0..1" />
+          <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="E_Commodity">
+              <PropertyRef Name="CommodityId" />
+            </Principal>
+            <Dependent Role="ShoppingCart">
+              <PropertyRef Name="CommodityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="LaTuErEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="A_UserLogin" EntityType="Self.A_UserLogin" />
           <EntitySet Name="B_User_roles" EntityType="Self.B_User_roles" />
-          <EntitySet Name="C_Area" EntityType="Self.C_Area" />
-          <EntitySet Name="D_address" EntityType="Self.D_address" />
           <EntitySet Name="E_Commodity" EntityType="Self.E_Commodity" />
           <EntitySet Name="F_Commoditypictures" EntityType="Self.F_Commoditypictures" />
           <EntitySet Name="G_Classification" EntityType="Self.G_Classification" />
-          <EntitySet Name="I_Order" EntityType="Self.I_Order" />
+          <EntitySet Name="ShoppingCarts" EntityType="Self.ShoppingCart" />
           <EntitySet Name="J_OrderXX" EntityType="Self.J_OrderXX" />
-          <EntitySet Name="K_ShoppingCart" EntityType="Self.K_ShoppingCart" />
-          <EntitySet Name="L_Supplier" EntityType="Self.L_Supplier" />
-          <EntitySet Name="M_Suppliertype" EntityType="Self.M_Suppliertype" />
-          <EntitySet Name="N_Logisticscompany" EntityType="Self.N_Logisticscompany" />
           <EntitySet Name="O_Commodityinventory" EntityType="Self.O_Commodityinventory" />
+          <AssociationSet Name="FK_A_UserLogin_B_User_roles" Association="Self.FK_A_UserLogin_B_User_roles">
+            <End Role="B_User_roles" EntitySet="B_User_roles" />
+            <End Role="A_UserLogin" EntitySet="A_UserLogin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_E_Commodity_A_UserLogin" Association="Self.FK_E_Commodity_A_UserLogin">
+            <End Role="A_UserLogin" EntitySet="A_UserLogin" />
+            <End Role="E_Commodity" EntitySet="E_Commodity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_J_OrderXX_A_UserLogin" Association="Self.FK_J_OrderXX_A_UserLogin">
+            <End Role="A_UserLogin" EntitySet="A_UserLogin" />
+            <End Role="J_OrderXX" EntitySet="J_OrderXX" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShoppingCart_A_UserLogin" Association="Self.FK_ShoppingCart_A_UserLogin">
+            <End Role="A_UserLogin" EntitySet="A_UserLogin" />
+            <End Role="ShoppingCart" EntitySet="ShoppingCarts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_B_User_roles_B_User_roles" Association="Self.FK_B_User_roles_B_User_roles">
+            <End Role="B_User_roles" EntitySet="B_User_roles" />
+            <End Role="B_User_roles1" EntitySet="B_User_roles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_F_Commoditypictures_E_Commodity" Association="Self.FK_F_Commoditypictures_E_Commodity">
+            <End Role="E_Commodity" EntitySet="E_Commodity" />
+            <End Role="F_Commoditypictures" EntitySet="F_Commoditypictures" />
+          </AssociationSet>
+          <AssociationSet Name="FK_J_OrderXX_E_Commodity" Association="Self.FK_J_OrderXX_E_Commodity">
+            <End Role="E_Commodity" EntitySet="E_Commodity" />
+            <End Role="J_OrderXX" EntitySet="J_OrderXX" />
+          </AssociationSet>
+          <AssociationSet Name="FK_O_Commodityinventory_E_Commodity" Association="Self.FK_O_Commodityinventory_E_Commodity">
+            <End Role="E_Commodity" EntitySet="E_Commodity" />
+            <End Role="O_Commodityinventory" EntitySet="O_Commodityinventory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShoppingCart_E_Commodity" Association="Self.FK_ShoppingCart_E_Commodity">
+            <End Role="E_Commodity" EntitySet="E_Commodity" />
+            <End Role="ShoppingCart" EntitySet="ShoppingCarts" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -346,7 +549,8 @@
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
                 <ScalarProperty Name="UserPhone" ColumnName="UserPhone" />
-                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="RolesId" ColumnName="RolesId" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -355,30 +559,6 @@
               <MappingFragment StoreEntitySet="B-User-roles">
                 <ScalarProperty Name="RolesId" ColumnName="RolesId" />
                 <ScalarProperty Name="Roles" ColumnName="Roles" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="C_Area">
-            <EntityTypeMapping TypeName="LaTuErModel.C_Area">
-              <MappingFragment StoreEntitySet="C-Area">
-                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
-                <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
-                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
-                <ScalarProperty Name="Pid" ColumnName="Pid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="D_address">
-            <EntityTypeMapping TypeName="LaTuErModel.D_address">
-              <MappingFragment StoreEntitySet="D-address">
-                <ScalarProperty Name="UseraddressId" ColumnName="UseraddressId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="ConsigneeName" ColumnName="ConsigneeName" />
-                <ScalarProperty Name="UserPhone" ColumnName="UserPhone" />
-                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
-                <ScalarProperty Name="Zipcode" ColumnName="Zipcode" />
-                <ScalarProperty Name="Detailedaddress" ColumnName="Detailedaddress" />
-                <ScalarProperty Name="Defaultstate" ColumnName="Defaultstate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -392,7 +572,7 @@
                 <ScalarProperty Name="CommodityDescription" ColumnName="CommodityDescription" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Contactnumber" ColumnName="Contactnumber" />
-                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="Inventoryquantity" ColumnName="Inventoryquantity" />
                 <ScalarProperty Name="Commoditycategory" ColumnName="Commoditycategory" />
                 <ScalarProperty Name="Image" ColumnName="Image" />
@@ -418,14 +598,13 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="I_Order">
-            <EntityTypeMapping TypeName="LaTuErModel.I_Order">
-              <MappingFragment StoreEntitySet="I-Order">
-                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-                <ScalarProperty Name="Purchasequantity" ColumnName="Purchasequantity" />
-                <ScalarProperty Name="Orderamount" ColumnName="Orderamount" />
-                <ScalarProperty Name="Ordertime" ColumnName="Ordertime" />
-                <ScalarProperty Name="Couriernumber" ColumnName="Couriernumber" />
+          <EntitySetMapping Name="ShoppingCarts">
+            <EntityTypeMapping TypeName="LaTuErModel.ShoppingCart">
+              <MappingFragment StoreEntitySet="ShoppingCart">
+                <ScalarProperty Name="ShoppingCartId" ColumnName="ShoppingCartId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CommodityId" ColumnName="CommodityId" />
+                <ScalarProperty Name="Quantityofcommodities" ColumnName="Quantityofcommodities" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -440,47 +619,9 @@
                 <ScalarProperty Name="Itempricing" ColumnName="Itempricing" />
                 <ScalarProperty Name="Commoditypictures" ColumnName="Commoditypictures" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="UseraddressId" ColumnName="UseraddressId" />
                 <ScalarProperty Name="Quantityofcommodities" ColumnName="Quantityofcommodities" />
                 <ScalarProperty Name="Orderstatus" ColumnName="Orderstatus" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="K_ShoppingCart">
-            <EntityTypeMapping TypeName="LaTuErModel.K_ShoppingCart">
-              <MappingFragment StoreEntitySet="K-ShoppingCart">
-                <ScalarProperty Name="ShoppingCartId" ColumnName="ShoppingCartId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="CommodityId" ColumnName="CommodityId" />
-                <ScalarProperty Name="Quantityofcommodities" ColumnName="Quantityofcommodities" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="L_Supplier">
-            <EntityTypeMapping TypeName="LaTuErModel.L_Supplier">
-              <MappingFragment StoreEntitySet="L-Supplier">
-                <ScalarProperty Name="SupplierId" ColumnName="SupplierId" />
-                <ScalarProperty Name="Nameofsupplier" ColumnName="Nameofsupplier" />
-                <ScalarProperty Name="Suppliertype" ColumnName="Suppliertype" />
-                <ScalarProperty Name="SupplierTelephone" ColumnName="SupplierTelephone" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="M_Suppliertype">
-            <EntityTypeMapping TypeName="LaTuErModel.M_Suppliertype">
-              <MappingFragment StoreEntitySet="M-Suppliertype">
-                <ScalarProperty Name="PlatformId" ColumnName="PlatformId" />
-                <ScalarProperty Name="platform" ColumnName="platform" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="N_Logisticscompany">
-            <EntityTypeMapping TypeName="LaTuErModel.N_Logisticscompany">
-              <MappingFragment StoreEntitySet="N-Logisticscompany">
-                <ScalarProperty Name="LogisticscompanyId" ColumnName="LogisticscompanyId" />
-                <ScalarProperty Name="NameofLogisticsCompany" ColumnName="NameofLogisticsCompany" />
-                <ScalarProperty Name="Logisticscompanycontacts" ColumnName="Logisticscompanycontacts" />
-                <ScalarProperty Name="Logisticstelephone" ColumnName="Logisticstelephone" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -488,7 +629,7 @@
             <EntityTypeMapping TypeName="LaTuErModel.O_Commodityinventory">
               <MappingFragment StoreEntitySet="O-Commodityinventory">
                 <ScalarProperty Name="StockId" ColumnName="StockId" />
-                <ScalarProperty Name="Commodity" ColumnName="Commodity" />
+                <ScalarProperty Name="CommodityId" ColumnName="CommodityId" />
                 <ScalarProperty Name="Inventoryquantity" ColumnName="Inventoryquantity" />
               </MappingFragment>
             </EntityTypeMapping>

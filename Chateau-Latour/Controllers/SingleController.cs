@@ -16,6 +16,10 @@ namespace Chateau_Latour.Controllers
             return View();
         }
 
+        /// <summary>
+        /// 商品详情
+        /// </summary>
+        /// <returns></returns>
         public JsonResult Load()
         {
             int id = Convert.ToInt32(TempData["id"]);
@@ -34,5 +38,7 @@ namespace Chateau_Latour.Controllers
                        };
             return Json(list, JsonRequestBehavior.AllowGet);
         }
+
+
     }
 }

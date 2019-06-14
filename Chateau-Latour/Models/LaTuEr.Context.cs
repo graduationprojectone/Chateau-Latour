@@ -27,17 +27,11 @@ namespace Chateau_Latour.Models
     
         public virtual DbSet<A_UserLogin> A_UserLogin { get; set; }
         public virtual DbSet<B_User_roles> B_User_roles { get; set; }
-        public virtual DbSet<C_Area> C_Area { get; set; }
-        public virtual DbSet<D_address> D_address { get; set; }
         public virtual DbSet<E_Commodity> E_Commodity { get; set; }
         public virtual DbSet<F_Commoditypictures> F_Commoditypictures { get; set; }
         public virtual DbSet<G_Classification> G_Classification { get; set; }
-        public virtual DbSet<I_Order> I_Order { get; set; }
+        public virtual DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public virtual DbSet<J_OrderXX> J_OrderXX { get; set; }
-        public virtual DbSet<K_ShoppingCart> K_ShoppingCart { get; set; }
-        public virtual DbSet<L_Supplier> L_Supplier { get; set; }
-        public virtual DbSet<M_Suppliertype> M_Suppliertype { get; set; }
-        public virtual DbSet<N_Logisticscompany> N_Logisticscompany { get; set; }
         public virtual DbSet<O_Commodityinventory> O_Commodityinventory { get; set; }
     }
 }

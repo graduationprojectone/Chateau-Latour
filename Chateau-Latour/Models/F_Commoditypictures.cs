@@ -18,6 +18,8 @@ namespace Chateau_Latour.Models
         public string Picturedescription { get; set; }
         public string Mastergraph { get; set; }
         public string Pictureset { get; set; }
-        public Nullable<int> CommodityId { get; set; }
+        public int CommodityId { get; set; }
+    
+        public virtual E_Commodity E_Commodity { get; set; }
     }
 }

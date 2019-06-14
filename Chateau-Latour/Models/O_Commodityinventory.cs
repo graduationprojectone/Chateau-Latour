@@ -15,7 +15,9 @@ namespace Chateau_Latour.Models
     public partial class O_Commodityinventory
     {
         public int StockId { get; set; }
-        public Nullable<int> Commodity { get; set; }
+        public int CommodityId { get; set; }
         public Nullable<int> Inventoryquantity { get; set; }
+    
+        public virtual E_Commodity E_Commodity { get; set; }
     }
 }

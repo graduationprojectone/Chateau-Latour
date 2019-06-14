@@ -14,7 +14,18 @@ namespace Chateau_Latour.Models
     
     public partial class B_User_roles
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public B_User_roles()
+        {
+            this.A_UserLogin = new HashSet<A_UserLogin>();
+        }
+    
         public int RolesId { get; set; }
         public string Roles { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<A_UserLogin> A_UserLogin { get; set; }
+        public virtual B_User_roles B_User_roles1 { get; set; }
+        public virtual B_User_roles B_User_roles2 { get; set; }
     }
 }

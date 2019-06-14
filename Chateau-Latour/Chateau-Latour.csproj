@@ -149,12 +149,6 @@
     <Compile Include="Models\B_User_roles.cs">
       <DependentUpon>LaTuEr.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\C_Area.cs">
-      <DependentUpon>LaTuEr.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\D_address.cs">
-      <DependentUpon>LaTuEr.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\E_Commodity.cs">
       <DependentUpon>LaTuEr.tt</DependentUpon>
     </Compile>
@@ -164,13 +158,7 @@
     <Compile Include="Models\G_Classification.cs">
       <DependentUpon>LaTuEr.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\I_Order.cs">
-      <DependentUpon>LaTuEr.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\J_OrderXX.cs">
-      <DependentUpon>LaTuEr.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\K_ShoppingCart.cs">
       <DependentUpon>LaTuEr.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LaTuEr.Context.cs">
@@ -188,16 +176,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LaTuEr.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\L_Supplier.cs">
-      <DependentUpon>LaTuEr.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\M_Suppliertype.cs">
-      <DependentUpon>LaTuEr.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\N_Logisticscompany.cs">
-      <DependentUpon>LaTuEr.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\O_Commodityinventory.cs">
+      <DependentUpon>LaTuEr.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShoppingCart.cs">
       <DependentUpon>LaTuEr.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

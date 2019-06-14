@@ -14,6 +14,15 @@ namespace Chateau_Latour.Models
     
     public partial class E_Commodity
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public E_Commodity()
+        {
+            this.F_Commoditypictures = new HashSet<F_Commoditypictures>();
+            this.J_OrderXX = new HashSet<J_OrderXX>();
+            this.O_Commodityinventory = new HashSet<O_Commodityinventory>();
+            this.ShoppingCarts = new HashSet<ShoppingCart>();
+        }
+    
         public int CommodityId { get; set; }
         public string Tradename { get; set; }
         public string SubtitleofCommodity { get; set; }
@@ -21,9 +30,19 @@ namespace Chateau_Latour.Models
         public string CommodityDescription { get; set; }
         public Nullable<decimal> Price { get; set; }
         public string Contactnumber { get; set; }
-        public Nullable<int> SupplierId { get; set; }
+        public Nullable<int> UserId { get; set; }
         public Nullable<int> Inventoryquantity { get; set; }
         public Nullable<int> Commoditycategory { get; set; }
         public string Image { get; set; }
+    
+        public virtual A_UserLogin A_UserLogin { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<F_Commoditypictures> F_Commoditypictures { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<J_OrderXX> J_OrderXX { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<O_Commodityinventory> O_Commodityinventory { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ShoppingCart> ShoppingCarts { get; set; }
     }
 }

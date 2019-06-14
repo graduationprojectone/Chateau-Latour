@@ -47,10 +47,14 @@
                 '<option value="4">4 个</option></select>' +
                 '</div><div class="clearfix"></div>' +
                 '<div class="occasion-cart" style=" margin-top :10px;">' +
-                '<a class="item_add" href="javascript::">添加到购物车 </a></div>'
+                '<a class="item_add" href="javascript::" onclick="AddCart(' + rs[0].CommodityId + ')">添加到购物车 </a></div>' +
+                '<div id="counter"> </div>'
             );
             $("#fix_two").append(my_div);
-
         }
     })
-})
+});
+
+function AddCart(id) {
+    
+}

@@ -12,11 +12,14 @@ namespace Chateau_Latour.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class N_Logisticscompany
+    public partial class ShoppingCart
     {
-        public int LogisticscompanyId { get; set; }
-        public string NameofLogisticsCompany { get; set; }
-        public string Logisticscompanycontacts { get; set; }
-        public string Logisticstelephone { get; set; }
+        public int ShoppingCartId { get; set; }
+        public int UserId { get; set; }
+        public Nullable<int> CommodityId { get; set; }
+        public Nullable<int> Quantityofcommodities { get; set; }
+    
+        public virtual A_UserLogin A_UserLogin { get; set; }
+        public virtual E_Commodity E_Commodity { get; set; }
     }
 }

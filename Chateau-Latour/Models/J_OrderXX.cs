@@ -15,15 +15,18 @@ namespace Chateau_Latour.Models
     public partial class J_OrderXX
     {
         public int OrderxxId { get; set; }
-        public Nullable<int> CommodityId { get; set; }
+        public int CommodityId { get; set; }
         public string Tradename { get; set; }
         public Nullable<System.DateTime> Ordertime { get; set; }
         public Nullable<int> PaymentmethodId { get; set; }
         public Nullable<decimal> Itempricing { get; set; }
         public string Commoditypictures { get; set; }
-        public Nullable<int> UserId { get; set; }
-        public Nullable<int> UseraddressId { get; set; }
+        public int UserId { get; set; }
         public Nullable<int> Quantityofcommodities { get; set; }
         public Nullable<int> Orderstatus { get; set; }
+        public int OrderId { get; set; }
+    
+        public virtual A_UserLogin A_UserLogin { get; set; }
+        public virtual E_Commodity E_Commodity { get; set; }
     }
 }
