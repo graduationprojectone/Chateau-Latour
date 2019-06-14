@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7913c298684f41e3b45ad888a63a280e" Name="Diagram1">
+      <Diagram DiagramId="cdd03e3bc9bb438e9ba5b63cc26e4ce5" Name="Diagram1">
         <EntityTypeShape EntityType="LaTuErModel.A_UserLogin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LaTuErModel.B_User_roles" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="LaTuErModel.C_Area" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />

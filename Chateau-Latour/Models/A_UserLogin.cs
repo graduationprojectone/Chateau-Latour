@@ -18,6 +18,6 @@ namespace Chateau_Latour.Models
         public string UserName { get; set; }
         public string UserPwd { get; set; }
         public string UserPhone { get; set; }
-        public int role { get; set; }
+        public Nullable<int> role { get; set; }
     }
 }

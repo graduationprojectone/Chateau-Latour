@@ -10,10 +10,10 @@
             <PropertyRef Name="UserId" />
           </Key>
           <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="UserPwd" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="UserPhone" Type="nchar" MaxLength="11" Nullable="false" />
-          <Property Name="role" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserPwd" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserPhone" Type="nchar" MaxLength="11" />
+          <Property Name="role" Type="int" />
         </EntityType>
         <EntityType Name="B-User-roles">
           <Key>
@@ -54,7 +54,7 @@
           <Property Name="Commodityclassification" Type="int" />
           <Property Name="CommodityDescription" Type="nvarchar" MaxLength="250" />
           <Property Name="Price" Type="money" />
-          <Property Name="Contactnumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contactnumber" Type="nvarchar" MaxLength="100" />
           <Property Name="SupplierId" Type="int" />
           <Property Name="Inventoryquantity" Type="int" />
           <Property Name="Commoditycategory" Type="int" />
@@ -182,10 +182,10 @@
             <PropertyRef Name="UserId" />
           </Key>
           <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="UserPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="UserPhone" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="role" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserPhone" Type="String" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="role" Type="Int32" />
         </EntityType>
         <EntityType Name="B_User_roles">
           <Key>
@@ -226,7 +226,7 @@
           <Property Name="Commodityclassification" Type="Int32" />
           <Property Name="CommodityDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
-          <Property Name="Contactnumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Contactnumber" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="SupplierId" Type="Int32" />
           <Property Name="Inventoryquantity" Type="Int32" />
           <Property Name="Commoditycategory" Type="Int32" />
@@ -317,7 +317,7 @@
           <Property Name="Commodity" Type="Int32" />
           <Property Name="Inventoryquantity" Type="Int32" />
         </EntityType>
-        <EntityContainer Name="LaTuErEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="LaTuErEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="A_UserLogin" EntityType="Self.A_UserLogin" />
           <EntitySet Name="B_User_roles" EntityType="Self.B_User_roles" />
           <EntitySet Name="C_Area" EntityType="Self.C_Area" />
@@ -338,7 +338,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LaTuErModelStoreContainer" CdmEntityContainer="LaTuErEntities1">
+        <EntityContainerMapping StorageEntityContainer="LaTuErModelStoreContainer" CdmEntityContainer="LaTuErEntities">
           <EntitySetMapping Name="A_UserLogin">
             <EntityTypeMapping TypeName="LaTuErModel.A_UserLogin">
               <MappingFragment StoreEntitySet="A-UserLogin">
@@ -507,7 +507,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="无" />

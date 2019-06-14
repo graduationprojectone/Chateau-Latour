@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace Chateau_Latour.Controllers
 {
-    public class gwcController : Controller
+    public class CartController : Controller
     {
-        // GET: gwc
-        public ActionResult gwc()
+        // GET: Cart
+        public ActionResult Cart()
         {
             return View();
         }

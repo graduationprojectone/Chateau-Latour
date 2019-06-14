@@ -17,7 +17,8 @@ namespace Chateau_Latour.Controllers
 
         public JsonResult Load()
         {
-            LaTuErEntities1 db = new LaTuErEntities1();
+            //查询商品
+            LaTuErEntities db = new LaTuErEntities();
             var list = db.E_Commodity.ToList();
             return Json(list,JsonRequestBehavior.AllowGet);
         }

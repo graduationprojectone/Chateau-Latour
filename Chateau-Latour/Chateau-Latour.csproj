@@ -134,7 +134,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\gwcController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\registerController.cs" />
@@ -214,7 +214,6 @@
     <Content Include="Images\Commodity\sp1_1.jpg" />
     <Content Include="Images\Commodity\sp1_2.jpg" />
     <Content Include="Images\Commodity\sp1_3.jpg" />
-    <Content Include="Images\Commodity\sp1_4.jpg" />
     <Content Include="Images\Commodity\sp2_1.jpg" />
     <Content Include="Images\Commodity\sp2_2.jpg" />
     <Content Include="Images\Commodity\sp2_3.jpg" />
@@ -326,6 +325,7 @@
     <Content Include="Scripts\uisearch.js" />
     <Content Include="Scripts\wow.min.js" />
     <Content Include="Scripts\YinXinXin\Index.js" />
+    <Content Include="Scripts\YinXinXin\Single.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -361,7 +361,7 @@
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Single\Single.cshtml" />
     <Content Include="Views\register\register.cshtml" />
-    <Content Include="Views\gwc\gwc.cshtml" />
+    <Content Include="Views\Cart\Cart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
