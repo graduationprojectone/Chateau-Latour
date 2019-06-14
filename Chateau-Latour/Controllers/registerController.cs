@@ -19,11 +19,11 @@ namespace Chateau_Latour.Controllers
         /// 注册
         /// </summary>
         /// <returns></returns>
-        [HttpPost]
-        public ActionResult Create(string UserPhone,string UserPwd)
-        {
-            LaTuErEntities db = new LaTuErEntities();
-        }
+        //[HttpPost]
+        //public ActionResult Create(string UserPhone,string UserPwd)
+        //{
+        //    LaTuErEntities db = new LaTuErEntities();
+        //}
 
     }
 }
