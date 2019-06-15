@@ -1251,7 +1251,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\GaoMeng\" />
-    <Folder Include="Scripts\WangJiaWen\" />
     <Folder Include="Scripts\WangJie\" />
   </ItemGroup>
   <ItemGroup>
