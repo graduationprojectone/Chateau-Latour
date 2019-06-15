@@ -19,7 +19,16 @@ namespace Chateau_Latour.Controllers
         {
             //查询商品
             LaTuErEntities db = new LaTuErEntities();
-            var list = db.E_Commodity.ToList();
+            var list = db.E_Commodity.ToList()
+                .Select(c => new
+                {
+                    CommodityId = c.CommodityId,
+                    Tradename = c.Tradename,
+                    Price = c.Price,
+                    Image = c.Image,
+                    Commodityclassification = c.Commodityclassification,
+                    Contactnumber = c.Contactnumber,
+                }).ToList();
             return Json(list,JsonRequestBehavior.AllowGet);
         }
     }
