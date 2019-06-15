@@ -24,9 +24,10 @@ namespace Chateau_Latour.Controllers
                 {
                     CommodityId = c.CommodityId,
                     Tradename = c.Tradename,
-                    SubtitleofCommodity = c.SubtitleofCommodity,
                     Price = c.Price,
-                    Image = c.Image
+                    Image = c.Image,
+                    Commodityclassification = c.Commodityclassification,
+                    Contactnumber = c.Contactnumber,
                 }).ToList();
             return Json(list,JsonRequestBehavior.AllowGet);
         }
