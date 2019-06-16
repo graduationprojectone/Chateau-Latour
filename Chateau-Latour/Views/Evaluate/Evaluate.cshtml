@@ -263,41 +263,17 @@
                 <div class="uc-panel">
                     <div class="uc-bigtit">商品评价</div>
                     <div class="uc-panel-bd">
-                        <table class="evalute-table">
+                        <table class="evalute-table1" style=" margin-left :30px;">
                             <tr class="hd">
-                                <th width="360">
-                                    <select name="" class="ui-txtin" style="width:120px;"><option value="">评价</option><option value="">好价</option><option value="">中价</option><option value="">评价</option></select>
-                                    <select name="" class="ui-txtin ml10" style="width:120px;"><option value="">评论</option><option value="">有评论内容</option><option value="">无评论内容</option></select>
-                                </th>
-                                <th>被评价人</th>
-                                <th>宝贝信息</th>
+                                <th width="450">评价内容</th>
+                                <th width="150">被评价人</th>
+                                <th width="150">宝贝信息</th>
                                 <th class="align-center">操作</th>
                             </tr>
-                            <tr class="item">
-                                <td>
-                                    <div class="cont">宝贝真心不错，质量很棒，下次还来<div class="time">[2016-05-29 16:02] </div></div>
-                                </td>
-                                <td>商家：小米旗舰店</td>
-                                <td>小米短袖T恤 五彩换<div class="text-theme">499.00元</div></td>
-                                <td class="align-center"><a class="ui-btn-theme uc-btn-md" href="">回复</a></td>
-                            </tr>
-                            <tr class="item">
-                                <td>
-                                    <div class="cont good">宝贝真心不错，质量很棒，下次还来<div class="time">[2016-05-29 16:02] </div></div>
-                                </td>
-                                <td>商家：小米旗舰店</td>
-                                <td>小米短袖T恤 五彩换<div class="text-theme">499.00元</div></td>
-                                <td class="align-center"><a class="ui-btn-theme uc-btn-md" href="">回复</a></td>
-                            </tr>
-                            <tr class="item">
-                                <td>
-                                    <div class="cont bad">宝贝真心不错，质量很棒，下次还来<div class="time">[2016-05-29 16:02] </div></div>
-                                </td>
-                                <td>商家：小米旗舰店</td>
-                                <td>小米短袖T恤 五彩换<div class="text-theme">499.00元</div></td>
-                                <td class="align-center"><a class="ui-btn-theme uc-btn-md" href="">回复</a></td>
-                            </tr>
-                        </table>
+                            </table> 
+                            <table class="evalute-table" id="evalute-table">
+                                
+                            </table>
                     </div>
                 </div>
             </div>
@@ -407,6 +383,7 @@
 <script src="~/Scripts/js/global.js"></script>
 <script>
     $(function () {
+         A();
         $('.check').iCheck({
             radioClass: 'sty2-radio'
         });
@@ -416,5 +393,28 @@
             format: 'YYYY/MM',
             festival: true
         });
-    });</script>
+    });
+
+function A() {
+         //页面加载显示商品
+    $.ajax({
+        url: "/Evaluate/Load",
+        type: "get",
+        dataType: "json",
+        success: function (rs) {
+            for (var i = 0; i < rs.length; i++) {
+                var my_html ='<tr class="item">'+
+                             '<td>'+
+                             '<div class="cont">宝贝真心不错，质量很棒，下次还来<div class="time">'+rs[i].Ordertime+' </div></div>'+
+                             '</td>'+
+                             '<td>商家：'+rs[i].CommodityId+'</td>'+
+                             '<td>'+rs[i].Tradename+'<div class="text-theme">'+rs[i].Itempricing+'元</div></td>'+
+                             '<td class="align-center"><a class="ui-btn-theme uc-btn-md" href="">删除</a></td>'+
+                             '</tr>';
+                $(".evalute-table").append(my_html);
+            }
+        }
+    });
+    }
+</script>
 </html>
