@@ -19,7 +19,8 @@ namespace Chateau_Latour.Controllers
         /// 注册
         /// </summary>
         /// <returns></returns>
-        public ActionResult TJ(A_UserLogin emp)
+        [HttpPost]
+        public ActionResult register(A_UserLogin emp)
         {
             LaTuErEntities db = new LaTuErEntities();
             db.A_UserLogin.Add(emp);
