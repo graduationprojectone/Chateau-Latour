@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta charset="utf-8">
     <meta http-equiv="Cache-Control" content="no-siteapp">
-    <title>个人信息</title>
+    <title>订单详情</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <link href="~/Content/css/iconfont/iconfont.css" rel="stylesheet" />
@@ -243,176 +243,123 @@
     <div class="wrapper uc-router">
     </div>
 
-    <div class="wrapper">
-        <div class="uc-main clearfix">
-            <div class="uc-aside">
-                <div class="uc-menu">
-                    <div class="tit">订单中心</div>
-                    <ul class="sublist">
-                        <li><a href="/Order/Order">我的订单</a></li>
-                    </ul>
-                    <div class="tit">账户中心</div>
-                    <ul class="sublist">
-                        <li><a href="/User/User">账户信息</a></li>
-                    </ul>
-                    <div class="tit">消息中心</div>
-                    <ul class="sublist">
-                        <li><a href="/Evaluate/Evaluate">商品评价</a></li>
-                    </ul>
-                </div>
+    <div style=" height :230px; border :1px solid #808080;width :902px; margin-left :200px;">
+        <div style=" float :left;width :300px;height :230px; border :1px solid #808080;">
+            <div style=" width :100%; border-bottom:1px solid #808080;height :50px;text-align :center ;"><h3 style=" line-height :50px;">订单信息</h3></div>
+            <div style=" width :100%;height :200px;">
+                <div><div style=" float :left ;">收货地址：</div><div style=" float :left ;">拉图尔,86-13397627411,湖南省 岳阳市 岳阳楼区 郭镇乡 学院路岳阳职业技术学院 ,414000</div></div>
+                <div><div style=" float :left ;">买家留言：</div><div style=" float :left ;">xxxxxxxxxxxxxxxxxxxxxxxx</div></div>
+                <div><div style=" float :left ;">订单编号：</div><div style=" float :left ;">1947584672162364.......</div></div>
+                <div><div style=" float :left ;">商家：</div><div style=" float :left ;">啦啦啦</div></div>
             </div>
-            <div class="uc-content">
-                <div class="uc-panel">
-                    <div class="uc-bigtit">个人信息</div>
-                    <div class="uc-panel-bd">
-                        <div class="account-info clearfix">
-                            <div class="col-headpic">
-                                <div class="pic-wrap">
-                                    <div class="label">头像</div>
-                                    <div class="picbox">
-                                        <img src="~/img/uc/headpic.jpg" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-userinfo">
-                                <div class="control-group">
-                                    <div class="hd">昵称：</div>
-                                    <div class="bd"><input class="ui-txtin" type="text" name="" value="拉图尔" /></div>
-                                </div>
-                                <div class="control-group">
-                                    <div class="hd">生日：</div>
-                                    <div class="bd"><input class="ui-txtin" type="text" name="" id="birthday"  value="1999-01-01"/></div>
-                                </div>
-                                <div class="control-group">
-                                    <div class="hd">性别：</div>
-                                    <div class="bd">
-                                        <label class="check"><input type="radio" name="sex" />男</label>
-                                        <label class="check ml25"><input type="radio" name="sex" checked ="checked" />女</label>
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <div class="hd">电话：</div>
-                                    <div class="bd"><input class="ui-txtin" type="text" name="" value="13397627411"/></div>
-                                </div>
-                                <div class="control-group">
-                                    <div class="hd">所在地：</div>
-                                    <div class="bd"><input class="ui-txtin" type="text" name="" value="湖南岳阳" /></div>
-                                </div>
-                                <div class="control-group">
-                                    <div class="hd">详细地址：</div>
-                                    <div class="bd"><input class="ui-txtin" type="text" name="" value=" 岳阳职业技术学院"/></div>
-                                </div>
-                                <div class="control-group">
-                                    <div class="hd">邮箱：</div>
-                                    <div class="bd">
-                                        <div class="text-black"><input class="ui-txtin" type="text" name="" value=" 123456789@qq.com" /></div>
-                                    </div>
-                                </div>
-                                <div class="control-submit">
-                                    <input class="ui-btn-theme submit" type="submit" value="确认" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        </div>
+        <div style=" float :left ; border :1px solid #808080;width :600px;height :230px;">
+            <div style=" margin-top :50px;margin-left :20px;">订单状态：已评价</div>
+            <div style=" margin-top :20px;margin-left :20px;">
+                物流：韵达快递运单号:3810991761516
+                2019-06-12 14:54:49 您已在岳阳职院大学生创业街菜鸟驿站完成取件，感谢使用菜鸟驿站，期待再次为您服务。
             </div>
         </div>
     </div>
 
-    <!-- 底部 -->
-    <div class="footer">
-        <div class="container">
-            <div class="footer-grids">
-                <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
-                    <h3>关于我们</h3>
-                    <p>
-                        联系我们
-                        <span>平台理念</span>
-                        <span>平台资质</span>
-                    </p>
-                </div>
-                <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".6s">
-                    <h3>售后服务</h3>
-                    <ul>
-                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>退换货说明</li>
-                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>购物须知</li>
-                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>关于专票</li>
-                    </ul>
-                </div>
-                <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".7s">
-                    <h3>Flickr Posts</h3>
-                    <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/13.jpg" alt=" " class="img-responsive" /></a>
+    <div style=" height :150px; border :1px solid #808080;width :902px; margin-left :200px;margin-top :10px;">
+        <table class="uc-table"></table>
+    </div> 
+
+        <!-- 底部 -->
+        <div class="footer">
+            <div class="container">
+                <div class="footer-grids">
+                    <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".5s">
+                        <h3>关于我们</h3>
+                        <p>
+                            联系我们
+                            <span>平台理念</span>
+                            <span>平台资质</span>
+                        </p>
                     </div>
-                    <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/14.jpg" alt=" " class="img-responsive" /></a>
+                    <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".6s">
+                        <h3>售后服务</h3>
+                        <ul>
+                            <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>退换货说明</li>
+                            <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>购物须知</li>
+                            <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>关于专票</li>
+                        </ul>
                     </div>
-                    <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/15.jpg" alt=" " class="img-responsive" /></a>
+                    <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".7s">
+                        <h3>Flickr Posts</h3>
+                        <div class="footer-grid-left">
+                            <a href="single.html"><img src="~/Images/Index/13.jpg" alt=" " class="img-responsive" /></a>
+                        </div>
+                        <div class="footer-grid-left">
+                            <a href="single.html"><img src="~/Images/Index/14.jpg" alt=" " class="img-responsive" /></a>
+                        </div>
+                        <div class="footer-grid-left">
+                            <a href="single.html"><img src="~/Images/Index/15.jpg" alt=" " class="img-responsive" /></a>
+                        </div>
+                        <div class="footer-grid-left">
+                            <a href="single.html"><img src="~/Images/Index/16.jpg" alt=" " class="img-responsive" /></a>
+                        </div>
+                        <div class="footer-grid-left">
+                            <a href="single.html"><img src="~/Images/Index/13.jpg" alt=" " class="img-responsive" /></a>
+                        </div>
+                        <div class="footer-grid-left">
+                            <a href="single.html"><img src="~/Images/Index/14.jpg" alt=" " class="img-responsive" /></a>
+                        </div>
+                        <div class="footer-grid-left">
+                            <a href="single.html"><img src="~/Images/Index/15.jpg" alt=" " class="img-responsive" /></a>
+                        </div>
+                        <div class="footer-grid-left">
+                            <a href="single.html"><img src="~/Images/Index/16.jpg" alt=" " class="img-responsive" /></a>
+                        </div>
+                        <div class="footer-grid-left">
+                            <a href="single.html"><img src="~/Images/Index/13.jpg" alt=" " class="img-responsive" /></a>
+                        </div>
+                        <div class="footer-grid-left">
+                            <a href="single.html"><img src="~/Images/Index/14.jpg" alt=" " class="img-responsive" /></a>
+                        </div>
+                        <div class="footer-grid-left">
+                            <a href="single.html"><img src="~/Images/Index/15.jpg" alt=" " class="img-responsive" /></a>
+                        </div>
+                        <div class="footer-grid-left">
+                            <a href="single.html"><img src="~/Images/Index/16.jpg" alt=" " class="img-responsive" /></a>
+                        </div>
+                        <div class="clearfix"> </div>
                     </div>
-                    <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/16.jpg" alt=" " class="img-responsive" /></a>
-                    </div>
-                    <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/13.jpg" alt=" " class="img-responsive" /></a>
-                    </div>
-                    <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/14.jpg" alt=" " class="img-responsive" /></a>
-                    </div>
-                    <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/15.jpg" alt=" " class="img-responsive" /></a>
-                    </div>
-                    <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/16.jpg" alt=" " class="img-responsive" /></a>
-                    </div>
-                    <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/13.jpg" alt=" " class="img-responsive" /></a>
-                    </div>
-                    <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/14.jpg" alt=" " class="img-responsive" /></a>
-                    </div>
-                    <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/15.jpg" alt=" " class="img-responsive" /></a>
-                    </div>
-                    <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Index/16.jpg" alt=" " class="img-responsive" /></a>
+                    <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".8s">
+                        <h3>Blog Posts</h3>
+                        <div class="footer-grid-sub-grids">
+                            <div class="footer-grid-sub-grid-left">
+                                <a href="single.html"><img src="~/Images/Index/9.jpg" alt=" " class="img-responsive" /></a>
+                            </div>
+                            <div class="footer-grid-sub-grid-right">
+                                <h4><a href="single.html">culpa qui officia deserunt</a></h4>
+                                <p>Posted On 25/3/2016</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <div class="footer-grid-sub-grids">
+                            <div class="footer-grid-sub-grid-left">
+                                <a href="single.html"><img src="~/Images/Index/10.jpg" alt=" " class="img-responsive" /></a>
+                            </div>
+                            <div class="footer-grid-sub-grid-right">
+                                <h4><a href="single.html">Quis autem vel eum iure</a></h4>
+                                <p>Posted On 25/3/2016</p>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
-                <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".8s">
-                    <h3>Blog Posts</h3>
-                    <div class="footer-grid-sub-grids">
-                        <div class="footer-grid-sub-grid-left">
-                            <a href="single.html"><img src="~/Images/Index/9.jpg" alt=" " class="img-responsive" /></a>
-                        </div>
-                        <div class="footer-grid-sub-grid-right">
-                            <h4><a href="single.html">culpa qui officia deserunt</a></h4>
-                            <p>Posted On 25/3/2016</p>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                    <div class="footer-grid-sub-grids">
-                        <div class="footer-grid-sub-grid-left">
-                            <a href="single.html"><img src="~/Images/Index/10.jpg" alt=" " class="img-responsive" /></a>
-                        </div>
-                        <div class="footer-grid-sub-grid-right">
-                            <h4><a href="single.html">Quis autem vel eum iure</a></h4>
-                            <p>Posted On 25/3/2016</p>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
+                <div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
+                    <h2><a href="/Home/Index">Latour <span>Enjoy quality</span></a></h2>
                 </div>
-                <div class="clearfix"> </div>
-            </div>
-            <div class="footer-logo animated wow slideInUp" data-wow-delay=".5s">
-                <h2><a href="/Home/Index">Latour <span>Enjoy quality</span></a></h2>
-            </div>
-            <div class="copy-right animated wow slideInUp" data-wow-delay=".5s">
-                <p>版权所有 &copy; 2019.Latour 保留所有权利</p>
+                <div class="copy-right animated wow slideInUp" data-wow-delay=".5s">
+                    <p>版权所有 &copy; 2019.Latour 保留所有权利</p>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- //底部 -->
+        <!-- //底部 -->
 </body>
 <script src="~/Scripts/js/jquery.js"></script>
 <link href="~/Scripts/js/icheck/style.css" rel="stylesheet" />
@@ -422,6 +369,7 @@
 <script src="~/Scripts/js/global.js"></script>
 <script>
     $(function () {
+        A();
         $('.check').iCheck({
             radioClass: 'sty2-radio'
         });
@@ -431,5 +379,46 @@
             format: 'YYYY/MM',
             festival: true
         });
-    });</script>
+    });
+function A() {
+         //页面加载显示商品
+    $.ajax({
+        url: "/Order/Load",
+        type: "get",
+        dataType: "json",
+        success: function (rs) {
+            for (var i = 0; i < rs.length; i++) {
+                var my_html = '<tr class="hd order-meta">' +
+                    ' <td colspan="4">' +
+                    '<div class="left">'+ rs[i].Ordertime+'订单号: 1947584672162364</div>' +
+                    '<div class="right">店铺：<a href="">'+rs[i].CommodityId+'</a> <span class="del iconfont icon-shanchu"></span></div>' +
+                    '</td>' +
+                    '</tr>' +
+                    '<tr class="order-goods">' +
+                    '<td>' +
+                    '<div class="goods-info">' +
+                    '<img class="figure" src="'+rs[i].Commoditypictures+'" alt="" />' +
+                    '<a class="text-info refund" href="uc-apply-refund.html">申请退货</a>' +
+                    '<div class="info">' +
+                    '<div>'+rs[i].Tradename+'</div>' +
+                    '<div>'+rs[i].Itempricing+'元×1</div>' +
+                    '</div>' +
+                    '</div>' +
+                    '</td>' +
+                    '<td>' +
+                    '金额：<span class="text-theme fwb">'+rs[i].Itempricing+'元</span>' +
+                    '</td>' +
+                    '<td>' +
+                    '<span class="status">快件已签收</span><br />' +
+                    '</td>' +
+                    '<td>' +
+                    '<a href="" class="ui-btn-theme uc-btn-md">追加评论</a>' +
+                    '</td>' +
+                    '</tr>';
+                $(".uc-table").append(my_html);
+            }
+        }
+    });
+    }
+</script>
 </html>

@@ -18,7 +18,7 @@ namespace mvc2.Controllers
         {
             //订单
             LaTuErEntities db = new LaTuErEntities();
-            var list =db.J_OrderXX.ToList()
+            var list =db.J_OrderXX.ToList ()
                       .Select(c => new
                       {
                           OrderxxId=c.OrderId ,
