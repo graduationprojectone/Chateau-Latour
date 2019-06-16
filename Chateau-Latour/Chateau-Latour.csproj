@@ -1569,6 +1569,7 @@
     <Content Include="Scripts\simpleCart.min.js" />
     <Content Include="Scripts\uisearch.js" />
     <Content Include="Scripts\wow.min.js" />
+    <Content Include="Scripts\YinXinXin\Cart.js" />
     <Content Include="Scripts\YinXinXin\Index.js" />
     <Content Include="Scripts\YinXinXin\Single.js" />
     <Content Include="Web.config" />

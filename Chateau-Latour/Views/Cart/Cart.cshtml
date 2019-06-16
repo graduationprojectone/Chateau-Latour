@@ -48,15 +48,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul>
                         <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">example.com</a></li>
                         <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 892</li>
-                        <li><i class="glyphicon glyphicon-log-in" aria-hidden="true" style="margin-left:720px"></i><a href="login.html">登陆</a></li>
-                        <li><i class="glyphicon glyphicon-book" aria-hidden="true"></i><a href="register.html">注册</a></li>
+                        <li><i class="glyphicon glyphicon-log-in" aria-hidden="true" style="margin-left:720px"></i><a href="/Login/Login">登陆</a></li>
+                        <li><i class="glyphicon glyphicon-book" aria-hidden="true"></i><a href="/register/register">注册</a></li>
                     </ul>
                 </div>
                 <div class="clearfix"> </div>
             </div>
             <div class="logo-nav">
                 <div class="logo-nav-left animated wow zoomIn" data-wow-delay=".5s">
-                    <h1><a href="index.html"> Latour <span>Enjoy quality</span></a></h1>
+                    <h1><a href="/Home/Index"> Latour <span>Enjoy quality</span></a></h1>
                 </div>
                 <div class="logo-nav-left1">
                     <nav class="navbar navbar-default">
@@ -71,7 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html" class="act">首页</a></li>
+                                <li class="active"><a href="/Home/Index" class="act">首页</a></li>
                                 <!-- 二级菜单 -->
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">酿造酒 <b class="caret"></b></a>
@@ -216,27 +216,29 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </form>
                         </div>
                     </div>
-                    <!-- search-scripts -->
+                    <!-- 搜索-scripts -->
                     <script src="~/Scripts/classie.js"></script>
                     <script src="~/Scripts/uisearch.js"></script>
-                    <script>new UISearch(document.getElementById('sb-search'));</script>
-                    <!-- //search-scripts -->
+                    <script>
+                        new UISearch(document.getElementById('sb-search'));
+                    </script>
+                    <!-- //搜索-scripts -->
                 </div>
                 <div class="header-right">
                     <div class="cart box_1">
-                        <a href="checkout.html">
+                        <a href="/Cart/Cart">
                             <h3>
                                 <div class="total">
                                     <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)
                                 </div>
-                                <img src="images/bag.png" alt="" />
+                                <img src="/Images/Index/bag.png" alt="" />
                             </h3>
                         </a>
                         <p><a href="javascript:;" class="simpleCart_empty">购物车</a></p>
                         <div class="clearfix"> </div>
                     </div>
                 </div>
-                <div class="clearfix"> </div>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>
@@ -255,7 +257,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="checkout">
         <div class="container">
             <div class="checkout-right animated wow slideInUp" data-wow-delay=".5s">
-                <table class="timetable_sub">
+                <table class="timetable_sub" id="Cart_First">
                     <thead>
                         <tr>
                             <th>编号</th>
@@ -266,93 +268,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <th>删除</th>
                         </tr>
                     </thead>
-                    <tr class="rem1">
-                        <td class="invert">1</td>
-                        <td class="invert-image"><a href="single.html"><img src="images/22.jpg" alt=" " class="img-responsive" /></a></td>
-                        <td class="invert">
-                            <div class="quantity">
-                                <div class="quantity-select">
-                                    <div class="entry value-minus">&nbsp;</div>
-                                    <div class="entry value"><span>1</span></div>
-                                    <div class="entry value-plus active">&nbsp;</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="invert">Black Shoe</td>
-                        <td class="invert">$290.00</td>
-                        <td class="invert">
-                            <div class="rem">
-                                <div class="close1"> </div>
-                            </div>
-                            <script>
-                                $(document).ready(function (c) {
-                                    $('.close1').on('click', function (c) {
-                                        $('.rem1').fadeOut('slow', function (c) {
-                                            $('.rem1').remove();
-                                        });
-                                    });
-                                });
-                            </script>
-                        </td>
-                    </tr>
-                    <tr class="rem2">
-                        <td class="invert">2</td>
-                        <td class="invert-image"><a href="single.html"><img src="~/Images/Index/11.jpg" alt=" " class="img-responsive" /></a></td>
-                        <td class="invert">
-                            <div class="quantity">
-                                <div class="quantity-select">
-                                    <div class="entry value-minus">&nbsp;</div>
-                                    <div class="entry value"><span>1</span></div>
-                                    <div class="entry value-plus active">&nbsp;</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="invert">Centre Table</td>
-                        <td class="invert">$250.00</td>
-                        <td class="invert">
-                            <div class="rem">
-                                <div class="close2"> </div>
-                            </div>
-                            <script>
-                                $(document).ready(function (c) {
-                                    $('.close2').on('click', function (c) {
-                                        $('.rem2').fadeOut('slow', function (c) {
-                                            $('.rem2').remove();
-                                        });
-                                    });
-                                });
-                            </script>
-                        </td>
-                    </tr>
-                    <tr class="rem3">
-                        <td class="invert">3</td>
-                        <td class="invert-image"><a href="single.html"><img src="~/Images/Index/11.jpg" alt=" " class="img-responsive" /></a></td>
-                        <td class="invert">
-                            <div class="quantity">
-                                <div class="quantity-select">
-                                    <div class="entry value-minus">&nbsp;</div>
-                                    <div class="entry value"><span>1</span></div>
-                                    <div class="entry value-plus active">&nbsp;</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="invert">Stone Bangles</td>
-                        <td class="invert">$299.00</td>
-                        <td class="invert">
-                            <div class="rem">
-                                <div class="close3"> </div>
-                            </div>
-                            <script>
-                                $(document).ready(function (c) {
-                                    $('.close3').on('click', function (c) {
-                                        $('.rem3').fadeOut('slow', function (c) {
-                                            $('.rem3').remove();
-                                        });
-                                    });
-                                });
-                            </script>
-                        </td>
-                    </tr>
+                  
                     <!--quantity-->
                     <script>
                         $('.value-plus').on('click', function () {
@@ -371,15 +287,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="checkout-left">
                 <div class="checkout-left-basket animated wow slideInLeft" data-wow-delay=".5s">
                     <h4>产品价格详情</h4>
-                    <ul>
-                        <li>产品1 <i>-</i> <span>$250.00 </span></li>
-                        <li>产品2 <i>-</i> <span>$290.00 </span></li>
-                        <li>产品3 <i>-</i> <span>$299.00 </span></li>
-                        <li>合计 <i>-</i> <span>$854.00</span></li>
+                    <ul id="ul_price">
+                        <div id="div_price"></div>
                     </ul>
                 </div>
                 <div class="checkout-right-basket animated wow slideInRight" data-wow-delay=".5s">
-                    <a href="single.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>继续购物</a>
+                    <a href="single.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>购买商品</a>
                 </div>
                 <div class="clearfix"> </div>
             </div>
@@ -407,67 +320,64 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </ul>
                 </div>
                 <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".7s">
-                    <h3>Latour 帖子</h3>
+                    <h3>Flickr Posts</h3>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="~/Images/Index/13.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="~/Images/Index/14.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="~/Images/Index/15.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="~/Images/Index/16.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="~/Images/Index/13.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="~/Images/Index/14.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="~/Images/Index/15.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="~/Images/Index/16.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="~/Images/Index/13.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="~/Images/Index/14.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="~/Images/Index/15.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="footer-grid-left">
-                        <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :75.39px;height :50.25px;" /></a>
+                        <a href="single.html"><img src="~/Images/Index/16.jpg" alt=" " class="img-responsive" /></a>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
                 <div class="col-md-3 footer-grid animated wow slideInLeft" data-wow-delay=".8s">
-                    <h3>Latour 博客</h3>
+                    <h3>Blog Posts</h3>
                     <div class="footer-grid-sub-grids">
                         <div class="footer-grid-sub-grid-left">
-                            <a href="single.html"><img src="~/Images/Single/con-cp1.png" alt=" " class="img-responsive" style=" width :76.5px;height :102px;" /></a>
+                            <a href="single.html"><img src="~/Images/Index/9.jpg" alt=" " class="img-responsive" /></a>
                         </div>
                         <div class="footer-grid-sub-grid-right">
-                            <h4><a href="single.html">拉图尔红酒</a></h4>
-                            <p>发表于2016年5月25日</p>
+                            <h4><a href="single.html">culpa qui officia deserunt</a></h4>
+                            <p>Posted On 25/3/2016</p>
                         </div>
                         <div class="clearfix"> </div>
                     </div>
                     <div class="footer-grid-sub-grids">
                         <div class="footer-grid-sub-grid-left">
-                            <a href="single.html"><img src="~/Images/Single/conlist-cp1.jpg" alt=" " class="img-responsive" style=" width :76.5px;height :102px;" /></a>
+                            <a href="single.html"><img src="~/Images/Index/10.jpg" alt=" " class="img-responsive" /></a>
                         </div>
                         <div class="footer-grid-sub-grid-right">
-                            <h4><a href="single.html">拉图尔白兰地</a></h4>
-                            <p>
-                                发表于2016年5月25日
-
-                            </p>
+                            <h4><a href="single.html">Quis autem vel eum iure</a></h4>
+                            <p>Posted On 25/3/2016</p>
                         </div>
                         <div class="clearfix"> </div>
                     </div>
@@ -483,5 +393,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //底部 -->
+    <!--引入js-->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/YinXinXin/Cart.js"></script>
+    <!--//引入js-->
 </body>
 </html>

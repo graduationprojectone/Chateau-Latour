@@ -24,6 +24,7 @@ namespace Chateau_Latour.Controllers
                 .FirstOrDefault();
             if (emp != null)
             {
+                Session["UserId"] = emp.UserId; //保存用户ID
                 return RedirectToAction("Index", "Home");
             }
             return RedirectToAction("Login");

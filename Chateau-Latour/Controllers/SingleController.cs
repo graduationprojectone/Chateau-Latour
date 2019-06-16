@@ -11,7 +11,7 @@ namespace Chateau_Latour.Controllers
     {
         // GET: Single
         public ActionResult Single(string controller, string action, int id)
-        {         
+        {
             TempData["id"] = id;
             return View();
         }
@@ -39,6 +39,31 @@ namespace Chateau_Latour.Controllers
             return Json(list, JsonRequestBehavior.AllowGet);
         }
 
-
+        /// <summary>
+        /// 添加商品进购物车
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult Add(int id, int count)
+        {
+            int UserID = Convert.ToInt32(Session["UserID"]);
+            LaTuErEntities db = new LaTuErEntities();
+            var cart = new ShoppingCart
+            {
+                UserId = UserID,
+                CommodityId = id,
+                Quantityofcommodities = count
+            };
+            db.ShoppingCarts.Add(cart);
+            int rs = db.SaveChanges();
+            var obj = new { msg = "添加失败", code = 201 };
+            if(rs > 0)
+            {
+                obj = new { msg = "添加成功", code = 200 };
+            }
+            return Json(obj);
+        }
     }
 }
