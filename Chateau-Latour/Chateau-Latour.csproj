@@ -205,8 +205,10 @@
     <Content Include="Content\css\sxtc.css" />
     <Content Include="Content\css\uc.css" />
     <Content Include="Content\flexslider.css" />
+    <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\jquery.countdown.css" />
+    <Content Include="Content\MyCss.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
@@ -1568,6 +1570,7 @@
     <Content Include="Scripts\script.js" />
     <Content Include="Scripts\simpleCart.min.js" />
     <Content Include="Scripts\uisearch.js" />
+    <Content Include="Scripts\WangJie\User.js" />
     <Content Include="Scripts\wow.min.js" />
     <Content Include="Scripts\YinXinXin\Cart.js" />
     <Content Include="Scripts\YinXinXin\Index.js" />
@@ -1586,11 +1589,11 @@
     <Content Include="Views\Order\Order.cshtml" />
     <Content Include="Views\User\User.cshtml" />
     <Content Include="Views\Evaluate\Evaluate.cshtml" />
+    <Content Include="Views\Cart\Order.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Scripts\GaoMeng\" />
-    <Folder Include="Scripts\WangJie\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

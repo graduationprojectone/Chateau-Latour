@@ -279,7 +279,7 @@
                                 </div>
                                 <div class="control-group">
                                     <div class="hd">生日：</div>
-                                    <div class="bd"><input class="ui-txtin" type="text" name="" id="birthday"  value="1999-01-01"/></div>
+                                    <div class="bd"><input class="ui-txtin" type="text" name="" id="birthday" value="1999-01-01" /></div>
                                 </div>
                                 <div class="control-group">
                                     <div class="hd">性别：</div>
@@ -298,7 +298,7 @@
                                 </div>
                                 <div class="control-group">
                                     <div class="hd">详细地址：</div>
-                                    <div class="bd"><input class="ui-txtin" type="text" name="" value=" 岳阳职业技术学院"/></div>
+                                    <div class="bd"><input class="ui-txtin" type="text" name="" value=" 岳阳职业技术学院" /></div>
                                 </div>
                                 <div class="control-group">
                                     <div class="hd">邮箱：</div>
@@ -411,23 +411,24 @@
         </div>
     </div>
     <!-- //底部 -->
-</body>
-<script src="~/Scripts/js/jquery.js"></script>
-<link href="~/Scripts/js/icheck/style.css" rel="stylesheet" />
-<script src="~/Scripts/js/icheck/icheck.min.js"></script>
-<script src="~/Scripts/js/laydate/laydate.js"></script>
-<script src="~/Scripts/js/layer/layer.js"></script>
-<script src="~/Scripts/js/global.js"></script>
-<script>
-    $(function () {
-        $('.check').iCheck({
-            radioClass: 'sty2-radio'
-        });
+    <script src="~/Scripts/js/jquery.js"></script>
+    <link href="~/Scripts/js/icheck/style.css" rel="stylesheet" />
+    <script src="~/Scripts/js/icheck/icheck.min.js"></script>
+    <script src="~/Scripts/js/laydate/laydate.js"></script>
+    <script src="~/Scripts/js/layer/layer.js"></script>
+    <script src="~/Scripts/js/global.js"></script>
+    <script src="~/Scripts/WangJie/User.js"></script>
+    <script>
+        $(function () {
+            $('.check').iCheck({
+                radioClass: 'sty2-radio'
+            });
 
-        laydate({
-            elem: '#birthday',
-            format: 'YYYY/MM',
-            festival: true
-        });
-    });</script>
+            laydate({
+                elem: '#birthday',
+                format: 'YYYY/MM',
+                festival: true
+            });
+        });</script>
+</body>
 </html>

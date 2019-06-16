@@ -2,40 +2,123 @@
 @{
     Layout = null;
 }
+
 <!DOCTYPE html>
+
 <html>
 <head>
-    <title>Login</title>
-    <!-- for-mobile-apps -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Best Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript">
         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
                function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!-- //for-mobile-apps -->
     <link rel="icon" type="image/x-icon" href="~/Images/Index/logo.jpg" />
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" media="all" />
     <!-- js -->
     <script src="~/Scripts/jquery.min.js"></script>
     <!-- //js -->
-    <!-- cart -->
     <script src="~/Scripts/simpleCart.min.js"></script>
     <!-- cart -->
-    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
-    <!-- for bootstrap working -->
-    <script src="~/Scripts/bootstrap-3.1.1.min.js"></script>
-    <!-- //for bootstrap working -->
+    <!--引用bootstrap-->
+    <script type="text/javascript" src="~/Scripts/bootstrap-3.1.1.min.js"></script>
+    <!-- //引用外部样式表 -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <!-- timer -->
+    <link rel="stylesheet" href="~/Content/jquery.countdown.css" />
+    <!-- //timer -->
     <!-- animation-effect -->
-    <link href="~/Content/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/animate.min.css" rel="stylesheet">
     <script src="~/Scripts/wow.min.js"></script>
-    <script>new WOW().init();</script>
-    <!-- //animation-effect -->
+    <script>
+        new WOW().init();
+    </script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Order</title>
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/MyCss.css" rel="stylesheet" />
+    <style>
+        #outside {
+            width: 1100px;
+            margin: 0 auto;
+        }
+
+        #zhuangtai {
+            width: 1100px;
+            margin: 10px auto;
+        }
+
+        .order {
+            border: 1px solid #808080;
+            width: 1023px;
+            margin: 10px auto;
+        }
+
+        #caozuo {
+            overflow: hidden;
+        }
+
+        #caozuofudong {
+            float: right;
+            padding: 10px 10px;
+            text-align: right;
+        }
+
+        .goods_message {
+            width: 465px;
+            padding-left: 20px;
+        }
+
+        .shuliang {
+            text-align: center;
+        }
+
+        #bg {
+            display: none;
+            width: 100%;
+            background-color: rgba(161, 156, 156, 0.41);
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        #ewm {
+            background-image: url(../../images/ewm.jpg);
+            background-size: 100% 100%;
+            height: 550px;
+        }
+
+        #anniu {
+            line-height: inherit;
+            text-align: center;
+        }
+
+            #anniu > a {
+                margin-top: 15px;
+                line-height: 40px;
+                width: 150px;
+                display: inline-block;
+                color: white;
+                border-radius: 8px;
+            }
+
+        #fukuan {
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
+
 <body>
     <!-- 头部 -->
     <div class="header">
@@ -240,31 +323,35 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //头部 -->
-    <!-- breadcrumbs -->
-    <div class="breadcrumbs">
-        <div class="container">
-            <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-                <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
-                <li class="active">Latour Login</li>
-            </ol>
+    <div id="zhuangtai">
+        <div class="btn-group" id="asd">
+            <a class="btn btn-danger">未付款订单</a>
+            <a class="btn btn-success">已付款订单</a>
+            <a class="btn btn-warning">卖家已发货订单</a>
+            <a class="btn btn-default">已签收订单</a>
         </div>
     </div>
-    <!-- //breadcrumbs -->
-    <!-- login -->
-    <div class="login">
-        <div class="container">
-            <h3 class="animated wow zoomIn" data-wow-delay=".5s">Latour Login</h3>
-            <div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
-                <form action=" /Login/Login" method="post" id="my_form">
-                    <input type="text" placeholder="电话" name="txt_id">
-                    <input type="password" placeholder="密码" name="txt_pwd">
-                    <input type="submit" value="登录">
-                </form>
+
+    <div id="outside">
+        <table class="timetable_sub" id="Cart_First">
+            <thead>
+                <tr>
+                    <th>订单编号</th>
+                    <th>商品图片</th>
+                    <th>商品数量</th>
+                    <th>商品名称</th>
+                    <th>商品价格</th>
+                    <th>小计</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    @*<div id="bg">
+            <div id="fukuan">
+                <div id="ewm"></div>
+                <div id="anniu"><a style="background-color: #0b93e1;">已经支付</a>&nbsp<a style="background-color: #c8c0c0;">取消支付</a></div>
             </div>
-        </div>
-    </div>
-    <!-- //login -->
-    <!-- footer -->
+        </div>*@
     <!-- 底部 -->
     <div class="footer">
         <div class="container">
@@ -359,6 +446,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //底部 -->
-    <!-- //footer -->
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({
+                url: "/Cart/UserOrder",
+                dataType: "json",
+                success: function (rs) {
+                    for (var i = 0; i < rs.length; i++) {
+                        var my_html = $(
+                            '<tr class="rem1" id="rov' + (i + 1) + '">' +
+                            '<td class="invert">' + rs[i].OrderId + '</td>' +
+                            '<td class="invert-image"><a href="single.html"><img src="' + rs[i].Image + '" alt=" " class="img-responsive" /></a></td>' +
+                            '<td class="invert"><div class="quantity">' +
+                            '<div class="quantity-select"><div class="entry value-minus">&nbsp;</div>' +
+                            '<div class="entry value"><span>1</span></div><div class="entry value-plus active">&nbsp;</div>' +
+                            '</div></div></td>' +
+                            '<td class="invert">' + rs[i].Tradename + '</td><td class="invert">￥' + rs[i].Price + '</td>' +
+                            '<td class="invert">￥' + rs[i].Price + '</td>'
+                        );
+                        $("#Cart_First").append(my_html);
+                    }
+                }
+            })
+        })
+    </script>
 </body>
 </html>

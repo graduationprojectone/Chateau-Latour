@@ -20,7 +20,6 @@
                     '<script>$(document).ready(function (c) {' +
                     '$(".close' + (i + 1) + '").on("click", function (c) {$("#rov' + (i + 1) + '").fadeOut("slow", function (c) {' +
                     '$("#rov' + (i + 1) + '").remove();});});});</script></td></tr>'
-
                 );
                 $("#Cart_First").append(my_shop);
 
