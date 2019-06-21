@@ -140,6 +140,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\OrderdetailsController.cs" />
     <Compile Include="Controllers\registerController.cs" />
     <Compile Include="Controllers\SingleController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -1590,6 +1591,7 @@
     <Content Include="Views\User\User.cshtml" />
     <Content Include="Views\Evaluate\Evaluate.cshtml" />
     <Content Include="Views\Cart\Order.cshtml" />
+    <Content Include="Views\Orderdetails\Orderdetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
